@@ -1,0 +1,69 @@
+#!name=3.面板合集 
+#!desc=常用面板与脚本
+#!system=ios
+
+
+[Script]
+# 机场信息模版  在持续化存储中增加args的key，内容为：url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
+Sub_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Sub-info.js,script-update-interval=0
+
+# 黄历面板
+# wnCalendar = type=generic,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/wnCalendar.js,timeout=10
+# wnCalendarcron = type=cron,cronexp="0 0 8 * *",script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/wnCalendar.js
+
+# 信息面板
+Surge-Panel = type=generic,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Surge-Panel.js,argument=icon=crown.fill&color=#f6c970,script-update-interval=0
+
+# WARP Panel
+WARP Panel = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/WARP.js
+
+# 网络面板
+Net-info=script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/net-info-panel.js,type=generic,timeout=30
+
+# 节假日信息
+Timecard = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/timecard.js
+
+# 流媒体解锁检测
+stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Stream-All.js
+
+# ChatGPT检测
+ChatGPT = type=generic,timeout=6,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/ChatGPT.js,argument=icon=lasso.and.sparkles&iconerr=xmark.seal.fill&icon-color=#336FA9&iconerr-color=#D65C51
+
+# 清除DNS缓存
+FlushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Flush-DNS/Moore/Flush-DNS.js,argument=title=DNS Flush&icon=cube&color=#afe59a&server=false
+
+# 油价推送 定时监控每日油价（通知）地区可以填入省份拼音，如果有同音地区 就去下方url找对应的地区 例如http://m.qiyoujiage.com/shanxi-3/xian.shtml 就填写 shanxi-3/xian 在地区里
+# YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/surgepushYJ.js
+YJCRON=type=cron,cronexp=0 8 * * *,wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/surgepushYJ.js
+[Panel]
+# 机场信息模版
+Sub_info = script-name=Sub_info,update-interval=3600
+
+# 油价显示
+# YJ = script-name=YJ,update-interval=43200
+
+# 黄历面板
+# wnCalendar = script-name= wnCalendar,title=今日黄历,content=请刷新,style=info,update-interval=28800
+
+# 信息面板
+Surge_Panel = script-name=Surge-Panel,update-interval=1
+
+# WARP Panel
+WARP Panel = title="☁️ 𝙒𝘼𝙍𝙋 连接信息", icon="lock.icloud.fill", script-name=WARP Panel
+
+# 网络面板
+NetInfoPanel=title="",content="",style=info,script-name=Net-info,update-interval=6
+
+# 节假日信息
+Timecard = script-name=Timecard,update-interval=3600
+
+# 流媒体解锁检测
+stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
+
+# ChatGPT检测
+ChatGPT = script-name=ChatGPT,update-interval=-1
+
+# 清除DNS缓存
+FlushDNS = script-name=FlushDNS,update-interval=3600
+[Host]
+ip-api.com = 208.95.112.1

@@ -1,0 +1,8 @@
+name: 屏蔽HTTP3/QUIC
+desc: 屏蔽HTTP3/QUIC
+
+rules:
+  - SCRIPT,quic,REJECT,no-track
+script:
+  shortcuts:
+    quic: network == 'udp' and dst_port == 443

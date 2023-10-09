@@ -53,12 +53,12 @@ proxy-groups:
  - {name: US, !!merge <<: *auto, filter: "(?=.*(美国|美國|US|(?i)States|American))^((?!(手游|游戏|game|Game)).)*$", icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/US.png', interval: 900, lazy: true, type: url-test, use: [Subscribe], hidden: true}
 
 rule-providers:
- RevisionRule: {!!merge <<: *c, path: ./rule_provider/RevisionRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Clash/Rule/RevisionRule.yaml'}
- RejectRule: {!!merge <<: *c, path: ./rule_provider/RejectRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Clash/Rule/RejectRule.yaml'}
+ RevisionRule: {!!merge <<: *c, path: ./rule_provider/RevisionRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Stash/Rule/RevisionRule.yaml'}
+ RejectRule: {!!merge <<: *c, path: ./rule_provider/RejectRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Stash/Rule/RejectRule.yaml'}
  WeChat: {!!merge <<: *c, path: ./rule_provider/WeChat.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.yaml'}
  Apple: {!!merge <<: *c, path: ./rule_provider/Apple.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml'}
  Microsoft: {!!merge <<: *c, path: ./rule_provider/Microsoft.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml'}
- ProxyRule: {!!merge <<: *c, path: ./rule_provider/ProxyRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Clash/Rule/ProxyRule.yaml'}
+ ProxyRule: {!!merge <<: *c, path: ./rule_provider/ProxyRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Stash/Rule/ProxyRule.yaml'}
  Google: {!!merge <<: *c, path: ./rule_provider/Google.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml'}
  Telegram: {!!merge <<: *c, path: ./rule_provider/Telegram.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml'}
  Disney: {!!merge <<: *c, path: ./rule_provider/Disney.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml'}

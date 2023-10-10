@@ -54,11 +54,11 @@ proxy-groups:
 
 rule-providers:
  RevisionRule: {!!merge <<: *c, path: ./rule_provider/RevisionRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Stash/Rule/RevisionRule.yaml'}
- RejectRule: {!!merge <<: *c, path: ./rule_provider/RejectRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Stash/Rule/RejectRule.yaml'}
+ ProxyRule: {!!merge <<: *c, path: ./rule_provider/ProxyRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Stash/Rule/ProxyRule.yaml'}
+ RejectRule: {!!merge <<: *c, path: ./rule_provider/RejectRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Stash_Rule_Actions/main/RejectRule/RejectRule.yaml'}
  WeChat: {!!merge <<: *c, path: ./rule_provider/WeChat.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.yaml'}
  Apple: {!!merge <<: *c, path: ./rule_provider/Apple.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml'}
  Microsoft: {!!merge <<: *c, path: ./rule_provider/Microsoft.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml'}
- ProxyRule: {!!merge <<: *c, path: ./rule_provider/ProxyRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Stash/Rule/ProxyRule.yaml'}
  Google: {!!merge <<: *c, path: ./rule_provider/Google.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml'}
  Telegram: {!!merge <<: *c, path: ./rule_provider/Telegram.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml'}
  Disney: {!!merge <<: *c, path: ./rule_provider/Disney.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml'}
@@ -68,17 +68,14 @@ rule-providers:
  YouTube: {!!merge <<: *c, path: ./rule_provider/YouTube.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml'}
  OpenAI: {!!merge <<: *c, path: ./rule_provider/OpenAI.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml'}
  Claude: {!!merge <<: *c, path: ./rule_provider/Claude.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml'}
- Lan: {!!merge <<: *c, path: ./rule_provider/Lan.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml'}
  GitHub: {!!merge <<: *c, path: ./rule_provider/GitHub.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml'}
- Global: {!!merge <<: *c, path: ./rule_provider/Global_Classical.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml'}
- GlobalMedia: {!!merge <<: *c, path: ./rule_provider/GlobalMedia_Classical.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml'}
- Proxy: {!!merge <<: *c, path: ./rule_provider/Proxy_Classical.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Proxy/Proxy_Classical.yaml'}
+ Proxy: {!!merge <<: *c, path: ./rule_provider/Proxy.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Stash_Rule_Actions/main/ProxyRule/ProxyRule.yaml'}
  China: {!!merge <<: *c, path: ./rule_provider/China.yaml, url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml'}
 
 rules:
  - RULE-SET,RevisionRule,DIRECT
- - RULE-SET,RejectRule,REJECT
  - RULE-SET,ProxyRule,PROXY
+ - RULE-SET,RejectRule,REJECT
  - RULE-SET,WeChat,DIRECT
  - RULE-SET,Apple,DIRECT
  - RULE-SET,Microsoft,DIRECT
@@ -92,10 +89,7 @@ rules:
  - RULE-SET,Telegram,PROXY
  - RULE-SET,Google,STREAMING
  - RULE-SET,GitHub,PROXY
- - RULE-SET,Global,PROXY
- - RULE-SET,GlobalMedia,PROXY
  - RULE-SET,Proxy,PROXY
  - RULE-SET,China,DIRECT
- - RULE-SET,Lan,DIRECT
  - GEOIP,CN,DIRECT
  - MATCH,FINAL

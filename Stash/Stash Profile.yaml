@@ -28,7 +28,7 @@ prl: &prl {type: select, proxies: [HK, SG, TW]}
 # 手动选择
 use: &use {type: select, use: [Subscribe]}
 # 自动选择
-auto: &auto {type: url-test, lazy: true, url: http://www.apple.com/library/test/success.html, interval: 900, use: [Subscribe]}
+auto: &auto {type: url-test, lazy: true, url: http://www.apple.com/library/test/success.html, interval: 900, use: [Subscribe], hidden: true}
 # 简易策略组
 easy: &easy {type: select, proxies: [DIRECT, PROXY]}
 # classical规则相关
@@ -44,13 +44,13 @@ proxy-providers:
 
 proxies:
 proxy-groups:
- - {name: PROXY, !!merge <<: *use, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bypass.png', type: select, use: [Subscribe]}
- - {name: STREAMING, !!merge <<: *prl, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png', proxies: [HK, SG, TW], type: select}
- - {name: FINAL, !!merge <<: *easy, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png', proxies: [DIRECT, PROXY], type: select}
- - {name: HK, !!merge <<: *auto, filter: "(?=.*(港|香港|HK|(?i)Hong))^((?!(手游|游戏|game|Game)).)*$", icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HK.png', interval: 900, lazy: true, type: url-test, use: [Subscribe], hidden: true}
- - {name: SG, !!merge <<: *auto, filter: "(?=.*(新加坡|狮城|SG|(?i)Singapore))^((?!(手游|游戏|game|Game)).)*$", icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SG.png', interval: 900, lazy: true, type: url-test, use: [Subscribe], hidden: true}
- - {name: TW, !!merge <<: *auto, filter: "(?=.*(台湾|台灣|TW|(?i)Taiwan))^((?!(手游|游戏|game|Game)).)*$", icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TW.png', interval: 900, lazy: true, type: url-test, use: [Subscribe], hidden: true}
- - {name: US, !!merge <<: *auto, filter: "(?=.*(美国|美國|US|(?i)States|American))^((?!(手游|游戏|game|Game)).)*$", icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/US.png', interval: 900, lazy: true, type: url-test, use: [Subscribe], hidden: true}
+ - {name: PROXY, !!merge <<: *use, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bypass.png'}
+ - {name: STREAMING, !!merge <<: *prl, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png'}
+ - {name: FINAL, !!merge <<: *easy, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png'}
+ - {name: HK, !!merge <<: *auto, filter: "(?=.*(港|香港|HK|(?i)Hong))^((?!(手游|游戏|game|Game)).)*$", icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HK.png'}
+ - {name: SG, !!merge <<: *auto, filter: "(?=.*(新加坡|狮城|SG|(?i)Singapore))^((?!(手游|游戏|game|Game)).)*$", icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SG.png'}
+ - {name: TW, !!merge <<: *auto, filter: "(?=.*(台湾|台灣|TW|(?i)Taiwan))^((?!(手游|游戏|game|Game)).)*$", icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TW.png'}
+ - {name: US, !!merge <<: *auto, filter: "(?=.*(美国|美國|US|(?i)States|American))^((?!(手游|游戏|game|Game)).)*$", icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/US.png'}
 
 rule-providers:
  RevisionRule: {!!merge <<: *c, path: ./rule_provider/RevisionRule.yaml, url: 'https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Stash/Rule/RevisionRule.yaml'}

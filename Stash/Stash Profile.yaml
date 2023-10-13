@@ -23,7 +23,7 @@ dns:
 # 订阅更新和延迟测试相关
 p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://www.apple.com/library/test/success.html, interval: 3000}}
 # 策略组引用相关
-pr: &pr {type: select, proxies: [DIRECT, PROXY, HK, SG, TW, US]}
+#pr: &pr {type: select, proxies: [DIRECT, PROXY, HK, SG, TW, US]}
 prl: &prl {type: select, proxies: [HK, SG, TW]}
 # 手动选择
 use: &use {type: select, use: [Subscribe]}
@@ -34,9 +34,9 @@ easy: &easy {type: select, proxies: [DIRECT, PROXY]}
 # classical规则相关
 c: &c {type: http, behavior: classical, interval: 86400}
 # domain规则相关
-d: &d {type: http, behavior: domain, interval: 86400}
+#d: &d {type: http, behavior: domain, interval: 86400}
 # ipcidr规则相关
-i: &i {type: http, behavior: ipcidr, interval: 86400}
+#i: &i {type: http, behavior: ipcidr, interval: 86400}
 ###结束
 
 proxy-providers:

@@ -95,3 +95,4 @@ payload:
   - DOMAIN-SUFFIX,tracking-protection.cdn.mozilla.net
   - DOMAIN-SUFFIX,upaiyun.com
   - DOMAIN-KEYWORD,wb_ad
+  - DOMAIN-SUFFIX,msn.com

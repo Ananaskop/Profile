@@ -97,3 +97,4 @@ payload:
   - DOMAIN-KEYWORD,wb_ad
   - DOMAIN-SUFFIX,msn.com
   - DOMAIN-SUFFIX,live.com
+  - DOMAIN-SUFFIX,microsoft.com

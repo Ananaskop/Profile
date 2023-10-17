@@ -100,3 +100,4 @@ user-agent,coffeecorp*,direct
 user-agent,restaurant-mobile*,direct
 host-suffix,msn.com,direct
 host-suffix,live.com,direct
+host-suffix,microsoft.com,direct

@@ -23,4 +23,3 @@ host-suffix,ip-api.com,proxy
 host,api.minecraftservices.com,proxy
 host,api.mojang.com,proxy
 host,easyemby.com,proxy
-host-suffix,google.cn,proxy

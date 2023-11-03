@@ -1,0 +1,16 @@
+#!name=3.面板合集 
+#!desc=常用面板与脚本
+#!system=ios
+
+
+[Script]
+# 机场信息模版  在持续化存储中增加args的key，内容为：url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
+Sub_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Sub-info.js,script-update-interval=0
+
+FlushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Flush-DNS/Moore/Flush-DNS.js,argument=title=DNS Flush&icon=cube&color=#afe59a&server=false
+
+[Panel]
+# 机场信息模版
+Sub_info = script-name=Sub_info,update-interval=3600
+
+FlushDNS = script-name=FlushDNS,update-interval=600

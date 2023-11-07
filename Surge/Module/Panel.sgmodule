@@ -49,7 +49,7 @@ Sub_info = script-name=Sub_info,update-interval=3600
 Surge_Panel = script-name=Surge-Panel,update-interval=1
 
 # WARP Panel
-WARP Panel = title="☁️ 𝙒𝘼𝙍𝙋 连接信息", icon="lock.icloud.fill", script-name=WARP Panel
+WARP Panel = title="WARP 连接信息", icon="lock.icloud.fill", script-name=WARP Panel
 
 # 网络面板
 NetInfoPanel=title="",content="",style=info,script-name=Net-info,update-interval=6

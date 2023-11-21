@@ -40,6 +40,38 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 ^https?:\/\/www\.google\.cn https://www.google.com 302
 ^https?:\/\/translate\.google\.cn https://translate.google.com 302
 
+# 饿了么 
+^https:\/\/elemecdn.com\/.+\/sitemap - reject
+^https:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4} - reject
+^https:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4} - reject
+^https:\/\/fuss10.elemecdn.com\/.+\.mp4 - reject
+^https:\/\/www1.elecfans.com\/www\/delivery - reject
+
+# 建设银行
+^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png - reject
+
+# 交管12123 
+^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
+
+# 肯德基 
+^https:\/\/res\.kfc\.com\.cn\/advertisement - reject
+
+# 拼多多 
+^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
+
+# 闲鱼 
+^https:\/\/gw\.alicdn\.com\/mt\/ - reject
+^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} - reject
+^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome - reject
+
+# 小米金融 
+^https:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen - reject
+^https:\/\/api\.jr\.mi\.com\/v\d\/adv - reject
+
+# 云闪付 
+^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
+
 [Map Local]
 # 微博国际版
 ^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
@@ -86,6 +118,23 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 # 京东
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend) data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 
+# 美团 & 美团外卖
+^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+
+# 移除公众号中的推广内容 
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|masonryfeed|relatedarticle)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/mishop\/splash data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+
+# 米家 
+^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.m\.mi\.com\/v1\/home\/page_feed(_v5)?$ data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.m\.mi\.com\/v1\/app\/popup_info$ data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.m\.mi\.com\/v1\/misearch\/search_input$ data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.m\.mi\.com\/v2\/search\/search_default$ data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+
 [Script]
 # 微博国际版
 微博国际版去广告 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=(feed&a=trends|user&a=get_searching_info)|a=(get_coopen_ads|user_center|search_topic|open_app&auth|icon_center)), script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo_intl_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
@@ -121,4 +170,4 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/JD_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
 
 [MITM]
-hostname = %APPEND% *api.weibo.cn, sdkapp.uve.weibo.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, api.m.jd.com
+hostname = %APPEND% *api.weibo.cn, sdkapp.uve.weibo.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, api.m.jd.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, home.mi.com, mp.weixin.qq.com, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, api.jr.mi.com, gw.alicdn.com, acs.m.taobao.com, res.kfc.com.cn, api.pinduoduo.com, api.yangkeduo.com, gab.122.gov.cn, wallet.95516.com

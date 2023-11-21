@@ -8,7 +8,7 @@ def download_file_from_comment(file_path):
             content = file.read()
             
             # 使用正则表达式提取引用地址
-            match = re.search(r'(https?://[^\s]*\.js)', content.decode('utf-8'))
+            match = re.search(r'(引用地址：https?://[^\s]*\.js)', content.decode('utf-8'))
             
             if match:
                 download_url = match.group(1)

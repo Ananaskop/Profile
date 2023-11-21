@@ -1,4 +1,7 @@
-// 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js
+/*
+引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js
+原创作者@RuCu6
+*/
 // 2023-11-12 14:45
 
 const url = $request.url;

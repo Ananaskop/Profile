@@ -1,21 +1,18 @@
-// 引用地址：https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js
 /*
-Surge配置参考注释,感谢@congcong.
+Surge配置参考注释,感谢@congcong mieqq.
 
 示例↓↓↓ 
 ----------------------------------------
 
 [Script]
-Sub_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js,script-update-interval=0,argument=url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
+Sub_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js,script-update-interval=0
 
 [Panel]
 Sub_info = script-name=Sub_info,update-interval=600
 
 ----------------------------------------
 
-先将带有流量信息的节点订阅链接encode，用encode后的链接替换"url="后面的[机场节点链接]
-
-（实在不会可以用这个捷径生成panel和脚本，https://www.icloud.com/shortcuts/3f24df391d594a73abd04ebdccd92584）
+在持续化存储中增加args的key，内容为：url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
 
 可选参数 &reset_day，后面的数字替换成流量每月重置的日期，如1号就写1，8号就写8。如"&reset_day=8",不加该参数不显示流量重置信息。
 
@@ -27,8 +24,6 @@ Sub_info = script-name=Sub_info,update-interval=600
 
 可选参数"color=xxx" 当使用 icon 字段时，可传入 color 字段控制图标颜色，字段内容为颜色的 HEX 编码。如：color=#007aff
 ----------------------------------------
-
-有些服务端不支持head访问，可以添加参数&method=get
 */
 
 let args = getArgs();
@@ -67,7 +62,7 @@ let args = getArgs();
 
 function getArgs() {
   return Object.fromEntries(
-    $argument
+    $persistentStore.read("args")
       .split("&")
       .map((item) => item.split("="))
       .map(([k, v]) => [k, decodeURIComponent(v)])

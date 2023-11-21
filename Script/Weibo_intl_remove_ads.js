@@ -1,4 +1,8 @@
-// 引用地址：https://raw.githubusercontent.com/Keywos/rule/main/JS/weibous.js
+/*
+引用地址：https://raw.githubusercontent.com/Keywos/rule/main/JS/weibous.js
+*/
+//2023-09-07 23:18:03
+
 let url = $request.url,
   body = $response.body;
 if (url.includes("interface/sdk/sdkad.php")) {
@@ -36,7 +40,7 @@ if (url.includes("interface/sdk/sdkad.php")) {
     if (e?.data?.cards) {
       e.data.cards.forEach((card) => {
         card.items = card.items.filter(
-          (item) => !["personal_vip", "personal_wallpaper", "personal_feedback", "personal_topic"].includes(item.type)
+          (item) => !["personal_vip", "personal_wallpaper"].includes(item.type)
         );})}
   } else if (url.includes("a=get_searching_info")) {
     e = {

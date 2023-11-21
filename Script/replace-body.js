@@ -1,5 +1,6 @@
-// 引用地址：https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js
 /*
+  来自mieqq的文件，https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js
+  
   Surge 脚本实现 Qx 的 response-body、和request-body 重写类型
   
   如 Qx：
@@ -57,4 +58,3 @@ if (body) {
 	console.log("Not Modify");
 	$done({});
 }
-

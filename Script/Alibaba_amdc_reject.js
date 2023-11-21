@@ -1,5 +1,5 @@
 /*
-引用地址https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amdc.js
+引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amdc.js
 */
 // 2023-08-24 12:45
 

@@ -34,6 +34,12 @@ DOMAIN,dns.jd.com,REJECT
 IP-CIDR,101.124.19.122/32,REJECT,no-resolve
 IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 
+[URL Rewrite]
+
+# 谷歌服务重定向 
+^https?:\/\/www\.google\.cn https://www.google.com 302
+^https?:\/\/translate\.google\.cn https://translate.google.com 302
+
 [Map Local]
 # 微博国际版
 ^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"

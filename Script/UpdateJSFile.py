@@ -36,7 +36,7 @@ def download_file_from_comment(file_path):
                 # 保存文件
                 with open(filename, 'wb') as new_file:
                     # 在文件开头插入注释信息
-                    new_file.write(f"// 引用地址：{full_url}\n".encode('utf-8'))
+                    new_file.write(f"// 引用地址：{download_url}\n".encode('utf-8'))
                     new_file.write(f"// 更新时间：{beijing_time_str}\n".encode('utf-8'))
                     new_file.write(response.content)
 

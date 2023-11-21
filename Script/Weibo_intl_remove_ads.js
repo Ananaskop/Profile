@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/Keywos/rule/main/JS/weibous.js
-// 更新时间：2023-11-21 15:29:57 UTC+08:00
+// 更新时间：2023-11-22 04:07:28
 let url = $request.url,
   body = $response.body;
 if (url.includes("interface/sdk/sdkad.php")) {

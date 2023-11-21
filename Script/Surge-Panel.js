@@ -1,32 +1,18 @@
-/* 参考 */
-/* https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/surgepro_reloadprofile.js */
-/* https://raw.githubusercontent.com/smartmimi/conf/master/surge/functionstatus.js */
-/* https://raw.githubusercontent.com/Moli-X/Resources/main/Script/Surge_Panel.js */
+// 引用地址：https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/surgepro_reloadprofile.js
+let params = getParams($argument)
 
 !(async () => {
-/* 定义图标 */
-let params = getParams($argument)
 /* 时间获取 */
 let traffic = (await httpAPI("/v1/traffic","GET"))
 let dateNow = new Date()
 let dateTime = Math.floor(traffic.startTime*1000)
 let startTime = timeTransform(dateNow,dateTime)
-/* MitM+Rewrite+Scripting状态获取 */
-let mitm_status = (await httpAPI("/v1/features/mitm","GET"));
-let rewrite_status = (await httpAPI("/v1/features/rewrite","GET"));
-let scripting_status = (await httpAPI("/v1/features/scripting","GET"));
 
-if ($trigger == "button") {
-	await httpAPI("/v1/profiles/reload");
-	$notification.post("配置重载","配置重载成功","")
-};
+if ($trigger == "button") await httpAPI("/v1/profiles/reload");
 
   $done({
-      title:"𝗦𝗨𝗥𝗚𝗘 𝗣𝗥𝗢",
-      content:
-	  `已持续运行: ${startTime}\n`+
-	  `------------------------------\n`+
-	  `MitM:`+icon_status(mitm_status.enabled)+`  Rewrite:`+icon_status(rewrite_status.enabled)+`  Script:`+icon_status(scripting_status.enabled),
+      title:"Surge Pro",
+      content:`启动时长: ${startTime}`,
 		icon: params.icon,
 		"icon-color":params.color
     });
@@ -58,13 +44,6 @@ if(days==0){
 
 }
 
-function icon_status(status){
-  if (status){
-    return "\u2611";
-  } else {
-      return "\u2612"
-    }
-}
 
 function httpAPI(path = "", method = "POST", body = null) {
     return new Promise((resolve) => {

@@ -31,7 +31,7 @@ def download_file_from_comment(file_path):
 
                 # 获取当前北京时间
                 beijing_time = datetime.now(timezone(timedelta(hours=8)))
-                beijing_time_str = beijing_time.strftime("%Y-%m-%d %H:%M:%S %Z")
+                beijing_time_str = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
 
                 # 保存文件
                 with open(filename, 'wb') as new_file:

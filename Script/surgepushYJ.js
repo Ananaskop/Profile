@@ -6,7 +6,7 @@ YJ = script-name=YJ,update-interval=43200
 [Script]
 YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/yj.js,argument=shanxi-3/xian
 */
-var region = 'shanxi-3/xian'
+var region = 'fujian'
 
 if (typeof $argument !== 'undefined' && $argument !== '') {
     region = $argument

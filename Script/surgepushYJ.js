@@ -4,7 +4,7 @@
 [Panel]
 YJ = script-name=YJ,update-interval=43200
 [Script]
-YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/yj.js,argument=shanxi-3/xian
+YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/surgepushYJ.js,argument=fujian
 */
 var region = 'fujian'
 

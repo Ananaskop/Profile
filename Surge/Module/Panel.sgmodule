@@ -32,7 +32,7 @@ ChatGPT = type=generic,timeout=6,script-path=https://raw.githubusercontent.com/G
 # 清除DNS缓存
 FlushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Flush-DNS/Moore/Flush-DNS.js,argument=title=DNS Flush&icon=cube&color=#afe59a&server=false
 
-# 油价推送 定时监控每日油价（通知）地区可以填入省份拼音，如果有同音地区 就去下方url找对应的地区 例如http://m.qiyoujiage.com/shanxi-3/xian.shtml 就填写 shanxi-3/xian 在地区里
+# 油价推送 定时监控每日油价（通知）地区可以填入省份拼音，如果有同音地区 就去下方url找对应的地区 例如http://m.qiyoujiage.com/fujian.shtml 就填写 fujian 在参数里
 # YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/surgepushYJ.js
 YJCRON=type=cron,cronexp=0 8 * * *,wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/surgepushYJ.js
 [Panel]

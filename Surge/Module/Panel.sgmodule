@@ -30,7 +30,7 @@ stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent
 ChatGPT = type=generic,timeout=6,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/ChatGPT.js,argument=icon=lasso.and.sparkles&iconerr=xmark.seal.fill&icon-color=#336FA9&iconerr-color=#D65C51
 
 # 清除DNS缓存
-FlushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Flush-DNS/Moore/Flush-DNS.js,argument=title=DNS Flush&icon=cube&color=#afe59a&server=false
+FlushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Flush-DNS.js,argument=title=DNS Flush&icon=cube&color=#afe59a&server=false
 
 # 油价推送 定时监控每日油价（通知）地区可以填入省份拼音，如果有同音地区 就去下方url找对应的地区 例如http://m.qiyoujiage.com/fujian.shtml 就填写 fujian 在参数里
 # YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/surgepushYJ.js

@@ -7,15 +7,8 @@
 # 机场信息模版  在持续化存储中增加args的key，内容为：url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
 Sub_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Sub-info.js,script-update-interval=0
 
-# 黄历面板
-# wnCalendar = type=generic,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/wnCalendar.js,timeout=10
-# wnCalendarcron = type=cron,cronexp="0 0 8 * *",script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/wnCalendar.js
-
 # 信息面板
 Surge-Panel = type=generic,script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Surge-Panel.js,argument=icon=crown.fill&color=#f6c970,script-update-interval=0
-
-# WARP Panel
-WARP Panel = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/WARP.js
 
 # 网络面板
 Net-info=script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/net-info-panel.js,type=generic,timeout=30
@@ -42,17 +35,11 @@ Sub_info = script-name=Sub_info,update-interval=3600
 # 油价显示
 # YJ = script-name=YJ,update-interval=43200
 
-# 黄历面板
-# wnCalendar = script-name= wnCalendar,title=今日黄历,content=请刷新,style=info,update-interval=28800
-
 # 信息面板
 Surge_Panel = script-name=Surge-Panel,update-interval=1
 
-# WARP Panel
-WARP Panel = title="WARP 连接信息", icon="lock.icloud.fill", script-name=WARP Panel
-
 # 网络面板
-NetInfoPanel=title="",content="",style=info,script-name=Net-info,update-interval=6
+NetInfoPanel=title="",content="",style=info,script-name=Net-info,update-interval=3600
 
 # 节假日信息
 Timecard = script-name=Timecard,update-interval=3600

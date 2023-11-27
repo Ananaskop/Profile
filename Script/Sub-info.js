@@ -1,16 +1,6 @@
 /*
+----------------------------------------
 Surge配置参考注释,感谢@congcong mieqq.
-
-示例↓↓↓ 
-----------------------------------------
-
-[Script]
-Sub_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js,script-update-interval=0
-
-[Panel]
-Sub_info = script-name=Sub_info,update-interval=600
-
-----------------------------------------
 
 在持续化存储中增加args的key，内容为：url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
 

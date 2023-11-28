@@ -72,10 +72,31 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 # 云闪付 
 ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 
+# 微博
+^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) - reject
+
 [Map Local]
 # 微博国际版
 ^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+
+# 微博
+^https:\/\/api\.weibo\.cn\/2\/(ug\/checkin\/list|push\/daily)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/photo\/info\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_positive|push_info)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/vote\/get_vote_detail\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(home_bottom_modal|interest_category)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/search\/container_discover\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/!\/sug\/list\/finderchange\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uvead)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 
 # 高德
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(car-end|route-plan)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
@@ -141,6 +162,30 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 微博国际版去广告 = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d\/statuses\/.*timeline, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibointl-ADs-Remove.js, requires-body=true, max-size=3145728, timeout=30
 微博国际版去广告 = type=http-response, pattern=^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibointl-ADs-Remove.js, requires-body=true, max-size=3145728, timeout=30
 
+# 微博
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/destroy\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/searchall\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+去除微博广告 = type=http-response, pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+会员图标 = type=http-response, pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibo-ADs-Remove.js, timeout=60, script-update-interval=0
+禁止重定向 = type=http-request, pattern=^https:\/\/weibo\.cn\/sinaurl\?(.*&)?(u|toasturl|goto)=, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/NoRedirect.js, timeout=60, script-update-interval=0
+禁止重定向 = type=http-request, pattern=^https:\/\/shop\.sc\.weibo\.com\/h5\/jump\/error\?(.*&)?url=, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/NoRedirect.js, timeout=60, script-update-interval=0
+禁止重定向 = type=http-response, pattern=^https:\/\/(sinaurl|t)\.cn\/, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/NoRedirect.js, timeout=60, script-update-interval=0
+
 # 高德
 移除阿里巴巴通用广告请求 = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amdc-ADs-Remove.js, timeout=30
 移除导航详情页扰人组件 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/routePlan\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=3145728, timeout=30
@@ -170,4 +215,4 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Common-ADs-Remove.js, requires-body=true, max-size=3145728, timeout=30
 
 [MITM]
-hostname = %APPEND% *api.weibo.cn, sdkapp.uve.weibo.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, api.m.jd.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, home.mi.com, mp.weixin.qq.com, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, api.jr.mi.com, gw.alicdn.com, acs.m.taobao.com, res.kfc.com.cn, api.pinduoduo.com, api.yangkeduo.com, gab.122.gov.cn, wallet.95516.com
+hostname = %APPEND% *api.weibo.cn, sdkapp.uve.weibo.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, api.m.jd.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, home.mi.com, mp.weixin.qq.com, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, api.jr.mi.com, gw.alicdn.com, acs.m.taobao.com, res.kfc.com.cn, api.pinduoduo.com, api.yangkeduo.com, gab.122.gov.cn, wallet.95516.com, *.weibo.cn, *.weibo.com, sinaurl.cn, t.cn, weibo.cn

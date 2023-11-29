@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js
-// 更新时间：2023-11-29 11:28:27
+// 更新时间：2023-11-30 04:08:08
 // 2023-11-26 16:35
 
 const url = $request.url;

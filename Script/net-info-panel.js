@@ -170,10 +170,10 @@ function getIP() {
     if (!v4 && !v6) {
       info = ['网络可能切换', '请手动重整面板更新 IP'];
     } else {
-      if (v4?.primaryAddress) info.push(`[本机IPv4]: ${v4?.primaryAddress}`);
-      if (v6?.primaryAddress) info.push(`[本机IPv6]: ${v6?.primaryAddress}`);
-      if (v4?.primaryRouter && getSSID()) info.push(`[网关IPv4]: ${v4?.primaryRouter}`);
-      if (v6?.primaryRouter && getSSID()) info.push(`[网关IPv6]: ${v6?.primaryRouter}`);
+      if (v4?.primaryAddress) info.push(`本机IPv4: ${v4?.primaryAddress}`);
+      if (v6?.primaryAddress) info.push(`本机IPv6: ${v6?.primaryAddress}`);
+      if (v4?.primaryRouter && getSSID()) info.push(`网关IPv4: ${v4?.primaryRouter}`);
+      if (v6?.primaryRouter && getSSID()) info.push(`网关IPv6: ${v6?.primaryRouter}`);
     }
     info = info.join("\n");
     return info + "\n";
@@ -188,23 +188,22 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
     // send http request
     httpMethod.get('http://ip-api.com/json').then(response => {
         if (Number(response.status) > 300) {
-            throw new Error(`Request error with http status code: ${response.status}\n${response.data}`);
+            throw new Error(`错误信息: ${response.status}\n${response.data}`);
         }
         const info = JSON.parse(response.data);
         $done({
             title: getSSID() ?? getCellularInfo(),
             content:
-                `<网络信息>\n` +
                 getIP() +
-                `[节点IPv4]: ${info.query}\n` +
-                `[节点服务商]: ${info.isp}\n` +
-                `[节点IP位置]: ${info.country} - ${info.city}`,
+                `节点IP地址: ${info.query}\n` +
+                `节点服务商: ${info.isp}\n` +
+                `节点IP位置: ${info.country} - ${info.city}`,
             icon: getSSID() ? 'wifi' : 'simcard',
             'icon-color': getSSID() ? '#005CAF' : '#F9BF45',
         });
     }).catch(error => {
         // 网络切换
-        if (String(error).startsWith("Network changed")) {
+        if (String(error).startsWith("网络已改变")) {
             if (getSSID()) {
                 $network.wifi = undefined;
                 $network.v4 = undefined;
@@ -253,6 +252,6 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
     }, scriptTimeout > surgeMaxTimeout ? surgeMaxTimeout : scriptTimeout);
 
     // 获取网络信息
-    logger.log("Script start");
+    logger.log("脚本开始");
     getNetworkInfo(retryTimes, retryInterval);
 })();

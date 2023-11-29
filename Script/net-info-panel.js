@@ -195,9 +195,9 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
             title: getSSID() ?? getCellularInfo(),
             content:
                 getIP() +
-                `节点IP地址: ${info.query}\n` +
-                `节点服务商: ${info.isp}\n` +
-                `节点IP位置: ${info.country} - ${info.city}`,
+                `节点IP: ${info.query}\n` +
+                `节点ISP: ${info.isp}\n` +
+                `节点位置: ${info.country} - ${info.city}`,
             icon: getSSID() ? 'wifi' : 'simcard',
             'icon-color': getSSID() ? '#005CAF' : '#F9BF45',
         });

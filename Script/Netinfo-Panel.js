@@ -164,10 +164,6 @@ function getSSID() {
     return  $network.wifi?.ssid;
 }
 
-function getSSIDName() {
-    '无线局域网' | + $network.wifi?.ssid;
-}
-
 function getIP() {
     const { v4, v6 } = $network;
     let info = [];
@@ -196,7 +192,7 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
         }
         const info = JSON.parse(response.data);
         $done({
-            title: getSSIDName() ?? getCellularInfo(),
+            title: '无线局域网 | '+ getSSID() ?? getCellularInfo(),
             content:
                 `-------------本机IP信息-------------\n` +
                 getIP() +

@@ -191,8 +191,9 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
             throw new Error(`错误信息: ${response.status}\n${response.data}`);
         }
         const info = JSON.parse(response.data);
+        const ssid = getSSID();
         $done({
-            title: `无线局域网 | ${getSSID()} || ${getCellularInfo()}`,
+            title: ssid !== '' ? `无线局域网 | ${ssid}` : getCellularInfo(),            
             content:
                 `-------------本机IP信息-------------\n` +
                 getIP() +

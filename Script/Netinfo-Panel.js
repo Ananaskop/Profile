@@ -153,8 +153,8 @@ function getCellularInfo() {
         const radio = $network['cellular-data'].radio;
         if ($network.wifi?.ssid == null && radio) {
             cellularInfo = carrierNames[carrierId] ?
-                `${carrierNames[carrierId]} | ${radioGeneration[radio]} - ${radio} ` :
-                `蜂窝数据 | ${radioGeneration[radio]} - ${radio}`;
+                `${carrierNames[carrierId]} | ${radioGeneration[radio]}` :
+                `蜂窝数据 | ${radioGeneration[radio]}`;
         }
     }
     return cellularInfo;

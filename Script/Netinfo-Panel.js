@@ -52,32 +52,6 @@ class httpMethod {
     }
 }
 
-class loggerUtil {
-    constructor() {
-        this.id = randomString();
-    }
-
-    log(message) {
-        message = `[${this.id}] [ LOG ] ${message}`;
-        console.log(message);
-    }
-
-    error(message) {
-        message = `[${this.id}] [ERROR] ${message}`;
-        console.log(message);
-    }
-}
-
-var logger = new loggerUtil();
-
-function randomString(e = 6) {
-    var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678",
-        a = t.length,
-        n = "";
-    for (i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
-    return n;
-}
-
 function getSSID() {
     return  $network.wifi?.ssid;
 }
@@ -134,7 +108,7 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
         // 判断是否有重试机会
         if (retryTimes > 0) {
             logger.error(error);
-            logger.log(`Retry after ${retryInterval}ms`);
+            logger.log(`请${retryInterval}毫秒后重试`);
             // retryInterval 时间后再次执行该函数
             setTimeout(() => getNetworkInfo(--retryTimes, retryInterval), retryInterval);
         } else {

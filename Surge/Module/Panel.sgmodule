@@ -1,5 +1,5 @@
 #!name=3.面板合集
-#!desc=常用面板与脚本
+#!desc=常用面板与定时脚本
 #!system=ios
 
 
@@ -11,7 +11,7 @@ Time-card = type=generic, timeout=30, script-path=https://raw.githubusercontent.
 Sub-info = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Sub-info.js
 
 # 网络面板
-Net-info = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/net-info-panel.js
+Net-info = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Netinfo-Panel.js
 
 # 清除DNS缓存
 Flush-DNS = type=generic, timeout=30, ,argument=title=清除DNS缓存&icon=cube&color=#afe59a&server=false, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Flush-DNS.js
@@ -20,7 +20,7 @@ Flush-DNS = type=generic, timeout=30, ,argument=title=清除DNS缓存&icon=cube&
 stream-all = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Stream-All.js
 
 # 油价推送 定时监控每日油价（通知）地区可以填入省份拼音，如果有同音地区 就去下方url找对应的地区 例如http://m.qiyoujiage.com/fujian.shtml 就填写 fujian 在参数里
-YJCRON = type=cron, cronexp=0 8 * * *, wake-system=1, timeout=120, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/surgepushYJ.js
+YJCRON = type=cron, cronexp=0 8 * * *, wake-system=1, timeout=120, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/SurgepushYJ.js
 
 [Panel]
 # 节假日信息

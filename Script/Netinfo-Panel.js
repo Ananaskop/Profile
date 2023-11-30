@@ -161,14 +161,14 @@ function getCellularInfo() {
 }
 
 function getSSID() {
-    return $network.wifi?.ssid;
+    return `无线局域网 | `+ $network.wifi?.ssid;
 }
 
 function getIP() {
     const { v4, v6 } = $network;
     let info = [];
     if (!v4 && !v6) {
-      info = ['网络可能切换', '请手动重整面板更新 IP'];
+      info = ['网络可能切换, 请手动重整面板更新 IP'];
     } else {
       if (v4?.primaryAddress) info.push(`本机IPv4：${v4?.primaryAddress}`);
       if (v6?.primaryAddress) info.push(`本机IPv6：${v6?.primaryAddress}`);
@@ -223,7 +223,7 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
             logger.error(error);
             $done({
                 title: '发生错误',
-                content: '无法获得目前网络信息\n请检查网络状态后重试',
+                content: '无法获得目前网络信息，请检查网络状态后重试',
                 icon: 'wifi.exclamationmark',
                 'icon-color': '#CB1B45',
             });
@@ -244,10 +244,10 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
     // retryTimes * 5000 为每次网络请求超时时间（Surge 网络请求超时为 5s）
     const scriptTimeout = retryTimes * 5000 + retryTimes * retryInterval;
     setTimeout(() => {
-        logger.log("Script timeout");
+        logger.log("脚本超时");
         $done({
             title: "请求超时",
-            content: "连线请求超时\n请检查网络状态后重试",
+            content: "连线请求超时，请检查网络状态后重试",
             icon: 'wifi.exclamationmark',
             'icon-color': '#CB1B45',
         });

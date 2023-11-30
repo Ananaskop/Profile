@@ -165,7 +165,7 @@ function getSSID() {
 }
 
 function getSSIDName() {
-    return  '无线局域网' | + $network.wifi?.ssid;
+    '无线局域网' | + $network.wifi?.ssid;
 }
 
 function getIP() {

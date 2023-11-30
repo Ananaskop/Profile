@@ -193,7 +193,7 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
         const info = JSON.parse(response.data);
         const ssid = getSSID();
         $done({
-            title: ssid !== '' ? `无线局域网 | ${ssid}` : getCellularInfo(),            
+            title: ssid !== null && ssid !== '' ? `无线局域网 | ${ssid}` : getCellularInfo(),
             content:
                 `-------------本机IP信息-------------\n` +
                 getIP() +

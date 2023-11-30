@@ -170,10 +170,10 @@ function getIP() {
     if (!v4 && !v6) {
       info = ['网络可能切换', '请手动重整面板更新 IP'];
     } else {
-      if (v4?.primaryAddress) info.push(`v4：${v4?.primaryAddress}`);
-      if (v6?.primaryAddress) info.push(`v6：${v6?.primaryAddress}`);
-      if (v4?.primaryRouter && getSSID()) info.push(`网关v4：${v4?.primaryRouter}`);
-      if (v6?.primaryRouter && getSSID()) info.push(`网关v6：${v6?.primaryRouter}`);
+      if (v4?.primaryAddress) info.push(`本机IPv4：${v4?.primaryAddress}`);
+      if (v6?.primaryAddress) info.push(`本机IPv6：${v6?.primaryAddress}`);
+      if (v4?.primaryRouter && getSSID()) info.push(`网关IPv4：${v4?.primaryRouter}`);
+      if (v6?.primaryRouter && getSSID()) info.push(`网关IPv6：${v6?.primaryRouter}`);
     }
     info = info.join("\n");
     return info + "\n";
@@ -194,12 +194,12 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
         $done({
             title: getSSID() ?? getCellularInfo(),
             content:
-                `-------本机IP信息-------\n` +
+                `-------------本机IP信息-------------\n` +
                 getIP() +
-                `-------节点IP信息-------\n` +
-                `IP：${info.query}\n` +
+                `-------------节点IP信息-------------\n` +
+                `节点IP：${info.query}\n` +
                 `服务商：${info.isp}\n` +
-                `位置：${info.country} - ${info.city}`,
+                `节点位置：${info.country} - ${info.city}`,
             icon: getSSID() ? 'wifi' : 'simcard',
             'icon-color': getSSID() ? '#005CAF' : '#F9BF45',
         });

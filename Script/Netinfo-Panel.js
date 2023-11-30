@@ -194,9 +194,9 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
         $done({
             title: getSSID() ?? getCellularInfo(),
             content:
-                `[本机IP信息]\n` +
+                `-------本机IP信息-------\n` +
                 getIP() +
-                `[节点IP信息]\n` +
+                `-------节点IP信息-------\n` +
                 `IP：${info.query}\n` +
                 `服务商：${info.isp}\n` +
                 `位置：${info.country} - ${info.city}`,

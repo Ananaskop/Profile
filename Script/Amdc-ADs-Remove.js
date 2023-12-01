@@ -1,4 +1,7 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js
+// 更新时间：2023-12-01 14:13:22
+// 2023-08-24 12:45
+
 const url = $request.url;
 const header = $request.headers;
 const isQuanX = typeof $task !== "undefined";

@@ -1,3 +1,4 @@
+// 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js
 const url = $request.url;
 const header = $request.headers;
 const isQuanX = typeof $task !== "undefined";

@@ -231,9 +231,9 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 去除水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Xiaohongshu-ADs-Remove.js, timeout=60, script-update-interval=0
 
 # VVebo修复
-修复时间线 = type=http-request ^https:\/\/api\.weibo\.cn\/2\/users\/show\?, requires-body=true, max-size=3145728,  script-path = https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js, timeout=60, script-update-interval=0
-修复时间线 = type=http-request ^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?, requires-body=true, max-size=3145728,  script-path = https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js, timeout=60, script-update-interval=0
-修复时间线 = type=http-response ^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?, requires-body=true, max-size=3145728,  script-path = https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js,  timeout=60, script-update-interval=0
+修复时间线 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/users\/show\?, requires-body=true, max-size=3145728,  script-path = https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js, timeout=60, script-update-interval=0
+修复时间线 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?, requires-body=true, max-size=3145728,  script-path = https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js, timeout=60, script-update-interval=0
+修复时间线 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?, requires-body=true, max-size=3145728,  script-path = https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js,  timeout=60, script-update-interval=0
 
 [MITM]
 hostname = %APPEND% *api.weibo.cn, sdkapp.uve.weibo.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, api.m.jd.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, home.mi.com, mp.weixin.qq.com, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, api.jr.mi.com, gw.alicdn.com, acs.m.taobao.com, res.kfc.com.cn, api.pinduoduo.com, api.yangkeduo.com, gab.122.gov.cn, wallet.95516.com, *.weibo.cn, *.weibo.com, sinaurl.cn, t.cn, weibo.cn, edith.xiaohongshu.com, www.xiaohongshu.com, api.weibo.cn

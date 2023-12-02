@@ -2,18 +2,18 @@ let url = $request.url;
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
 
-if (typeof $persistentStore === 'undefined') {
-  // 使用 $prefs.setValueForKey 代替 $persistentStore.write
-  $prefs.setValueForKey(getUid(url), "uid");
-} else if (typeof $persistentStore.read === 'undefined') {
-  // 使用 $prefs.valueForKey 代替 $persistentStore.read
-  let uid = getUid(url) || ($prefs.valueForKey("uid"));
-  processRequest(uid);
+if (typeof $persistentStore === 'undefined' || typeof $persistentStore.write === 'undefined' || typeof $persistentStore.read === 'undefined') {
+  // 使用 $prefs.setValueForKey 代替 $persistentStore.write 和 $persistentStore.read
+  let uid = getUid(url) || $prefs.valueForKey("uid");
+  $prefs.setValueForKey(uid, "uid");
 } else if (url.includes("users/show")) {
   $persistentStore.write(getUid(url), "uid");
   $done({});
 } else if (url.includes("statuses/user_timeline")) {
-  let uid = getUid(url) || $persistentStore.read("uid") || $prefs.valueForKey("uid");
+  let uid = getUid(url);
+  if (!uid) {
+    uid = $persistentStore.read("uid") || $prefs.valueForKey("uid");
+  }
   processRequest(uid);
 } else if (url.includes("profile/statuses/tab")) {
   let data = JSON.parse($response.body);

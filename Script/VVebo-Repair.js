@@ -1,16 +1,20 @@
-// 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
-// 更新时间：2023-12-02 17:58:28
 let url = $request.url;
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
-if (url.includes("users/show")) {
+
+if (typeof $persistentStore === 'undefined') {
+  // 使用 $prefs.setValueForKey 代替 $persistentStore.write
+  $prefs.setValueForKey(getUid(url), "uid");
+} else if (typeof $persistentStore.read === 'undefined') {
+  // 使用 $prefs.valueForKey 代替 $persistentStore.read
+  let uid = getUid(url) || ($prefs.valueForKey("uid"));
+  processRequest(uid);
+} else if (url.includes("users/show")) {
   $persistentStore.write(getUid(url), "uid");
   $done({});
 } else if (url.includes("statuses/user_timeline")) {
-  let uid = getUid(url) || $persistentStore.read("uid");
-  url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
-  url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
-  $done({ url });
+  let uid = getUid(url) || $persistentStore.read("uid") || $prefs.valueForKey("uid");
+  processRequest(uid);
 } else if (url.includes("profile/statuses/tab")) {
   let data = JSON.parse($response.body);
   let statuses = data.cards
@@ -22,4 +26,10 @@ if (url.includes("users/show")) {
   $done({ body: JSON.stringify({ statuses, since_id: sinceId, total_number: 100 }) });
 } else {
   $done({});
+}
+
+function processRequest(uid) {
+  url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
+  url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
+  $done({ url });
 }

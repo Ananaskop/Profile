@@ -5,19 +5,20 @@ let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
 
 // 使用 $prefs 或 $persistentStore
 let setStorage = (value, key) => {
-  if ($persistentStore.write) {
+  if ($prefs.setValueForKey) {
+  $prefs.setValueForKey(value, key);
+  } else if ($persistentStore.write) {
     $persistentStore.write(value, key);
-  } else if ($prefs.setValueForKey) {
-    $prefs.setValueForKey(value, key);
   }
 };
 
 let getStorage = (key, fallbackValue) => {
-  if ($persistentStore.read) {
-    return $persistentStore.read(key) || fallbackValue;
-  } else if ($prefs.valueForKey) {
+  if ($prefs.valueForKey) {
     return $prefs.valueForKey(key) || fallbackValue;
   }
+  else if ($persistentStore.read) {
+    return $persistentStore.read(key) || fallbackValue;
+  } 
 };
 
 if (url.includes("users/show")) {

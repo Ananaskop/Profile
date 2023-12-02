@@ -7,15 +7,20 @@ function getUid(url) {
     return undefined;
 }
 
+const isQuantumultX = typeof $prefs !== "undefined";
+
 if (url.includes("users/show")) {
     const uid = getUid(url);
     if (uid) {
-        $persistentStore.write(uid, "uid"); // For Surge
-        $prefs.setValueForKey(uid, "uid"); // For Quantumult X
+        if (isQuantumultX) {
+            $prefs.setValueForKey(uid, "uid");
+        } else {
+            $persistentStore.write(uid, "uid");
+        }
     }
     $done({});
 } else if (url.includes("statuses/user_timeline")) {
-    const storedUid = $persistentStore.read("uid") || $prefs.valueForKey("uid");
+    const storedUid = isQuantumultX ? $prefs.valueForKey("uid") : $persistentStore.read("uid");
     const uid = getUid(url) || storedUid;
     const newUrl = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id") + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
     $done({ url: newUrl });

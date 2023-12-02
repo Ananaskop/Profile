@@ -163,9 +163,9 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/v1\/ads\/resource\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 [Script]
 # VVebo修复
-修复时间线 = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/users\/show\?, script-path = https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js, timeout=60, script-update-interval=0
-修复时间线 = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?, script-path = https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js, timeout=60, script-update-interval=0
-修复时间线 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?, requires-body=true, max-size=3145728,  script-path = https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js,  timeout=60, script-update-interval=0
+修复时间线 = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/users\/show\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js
+修复时间线 = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js
+修复时间线 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js, requires-body=true
 
 # 微博国际版
 微博国际版去广告 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=(feed&a=trends|user&a=get_searching_info)|a=(get_coopen_ads|user_center|search_topic|open_app&auth|icon_center)), script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibointl-ADs-Remove.js, requires-body=true, max-size=3145728, timeout=30

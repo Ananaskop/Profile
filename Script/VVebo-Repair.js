@@ -5,7 +5,10 @@ let hasUid = (url) => url.includes("weibouid");
 let getUid = (url) => (hasUid(url) ? url.match(/weibouid=(\d+)/)[1] : undefined);
 
 if (url.includes("users/show")) {
-  weibouid = getUid(url) || weibouid; // 修复赋值语法错误
+  let uid = getUid(url);
+  if (uid) {
+    weibouid = uid; // 如果存在用户 ID，赋值给全局变量
+  }
   $done({});
 } else if (url.includes("statuses/user_timeline")) {
   let uid = getUid(url) || weibouid;

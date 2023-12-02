@@ -15,8 +15,7 @@ let setStorage = (value, key) => {
 let getStorage = (key, fallbackValue) => {
   if ($prefs.valueForKey) {
     return $prefs.valueForKey(key) || fallbackValue;
-  }
-  else if ($persistentStore.read) {
+  } else if ($persistentStore.read) {
     return $persistentStore.read(key) || fallbackValue;
   } 
 };

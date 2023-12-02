@@ -1,30 +1,12 @@
+// 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
 let url = $request.url;
-
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
-
-// 使用 $prefs 或 $persistentStore
-let setStorage = (value, key) => {
-  if ($prefs.setValueForKey) {
-  $prefs.setValueForKey(value, key);
-  } else if ($persistentStore.write) {
-    $persistentStore.write(value, key);
-  }
-};
-
-let getStorage = (key, fallbackValue) => {
-  if ($prefs.valueForKey) {
-    return $prefs.valueForKey(key) || fallbackValue;
-  } else if ($persistentStore.read) {
-    return $persistentStore.read(key) || fallbackValue;
-  } 
-};
-
 if (url.includes("users/show")) {
-  setStorage(getUid(url), "uid");
+  $persistentStore.write(getUid(url), "uid");
   $done({});
 } else if (url.includes("statuses/user_timeline")) {
-  let uid = getUid(url) || getStorage("uid");
+  let uid = getUid(url) || $persistentStore.read("uid");
   url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
   url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
   $done({ url });

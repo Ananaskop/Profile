@@ -4,8 +4,21 @@ let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
 
 // 使用 $prefs 或 $persistentStore
-let setStorage = $persistentStore.write || $prefs.setValueForKey;
-let getStorage = $persistentStore.read || $prefs.valueForKey;
+let setStorage = (value, key) => {
+  if ($persistentStore.write) {
+    $persistentStore.write(value, key);
+  } else if ($prefs.setValueForKey) {
+    $prefs.setValueForKey(value, key);
+  }
+};
+
+let getStorage = (key, fallbackValue) => {
+  if ($persistentStore.read) {
+    return $persistentStore.read(key) || fallbackValue;
+  } else if ($prefs.valueForKey) {
+    return $prefs.valueForKey(key) || fallbackValue;
+  }
+};
 
 if (url.includes("users/show")) {
   setStorage(getUid(url), "uid");

@@ -1,14 +1,14 @@
 let url = $request.url;
-let uid; // 全局变量用于存储用户 ID
+let weibouid; // 模块变量用于存储用户 ID
 
-let hasUid = (url) => url.includes("uid");
-let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
+let hasUid = (url) => url.includes("weibouid");
+let getUid = (url) => (hasUid(url) ? url.match(/weibouid=(\d+)/)[1] : undefined);
 
 if (url.includes("users/show")) {
-  uid = getUid(url);
+  weibouid = getUid(url) || weibouid; // 修复赋值语法错误
   $done({});
 } else if (url.includes("statuses/user_timeline")) {
-  uid = getUid(url) || uid;
+  let uid = getUid(url) || weibouid;
   url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
   url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
   $done({ url });

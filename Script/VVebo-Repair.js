@@ -1,33 +1,26 @@
-const url = $request.url;
+let url = $request.url;
+let uid; // 全局变量用于存储用户 ID
 
-function getUid(url) {
-    if (url.includes("uid")) {
-        return url.match(/uid=(\d+)/)[1];
-    }
-    return undefined;
-}
-
-let uid; 
+let hasUid = (url) => url.includes("uid");
+let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
 
 if (url.includes("users/show")) {
-    uid = getUid(url);
-    if (uid) {
-        $done({});
-    }
+  uid = getUid(url);
+  $done({});
 } else if (url.includes("statuses/user_timeline")) {
-    const storedUid = uid || $persistentStore.read("uid");
-    uid = getUid(url) || storedUid;
-    const newUrl = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id") + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
-    $done({ url: newUrl });
+  uid = getUid(url) || uid;
+  url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
+  url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
+  $done({ url });
 } else if (url.includes("profile/statuses/tab")) {
-    const data = JSON.parse($response.body);
-    const statuses = data.cards
-        .map(card => (card.card_group ? card.card_group : card))
-        .flat()
-        .filter(card => card.card_type === 9)
-        .map(card => card.mblog);
-    const sinceId = data.cardlistInfo.since_id;
-    $done({ body: JSON.stringify({ statuses, since_id: sinceId, total_number: 100 }) });
+  let data = JSON.parse($response.body);
+  let statuses = data.cards
+    .map((card) => (card.card_group ? card.card_group : card))
+    .flat()
+    .filter((card) => card.card_type === 9)
+    .map((card) => card.mblog);
+  let sinceId = data.cardlistInfo.since_id;
+  $done({ body: JSON.stringify({ statuses, since_id: sinceId, total_number: 100 }) });
 } else {
-    $done({});
+  $done({});
 }

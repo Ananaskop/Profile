@@ -162,6 +162,8 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/v1\/ads\/resource\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 
+# 中信银行开屏广告
+^https:\/\/imcs\.citicbank\.com\/cloud\/.+(1125.+2436|1242.+2688|750.+1638|563.+1218) data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 [Script]
 # 微博国际版
 微博国际版去广告 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=(feed&a=trends|user&a=get_searching_info)|a=(get_coopen_ads|user_center|search_topic|open_app&auth|icon_center)), requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Weibointl-ADs-Remove.js

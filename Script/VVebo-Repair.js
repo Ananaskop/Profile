@@ -4,10 +4,9 @@ let url = $request.url;
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
 if (url.includes("users/show")) {
-  $persistentStore.write(getUid(url), "uid");
   $done({});
 } else if (url.includes("statuses/user_timeline")) {
-  let uid = getUid(url) || $persistentStore.read("uid");
+  let uid = getUid(url);
   url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
   url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
   $done({ url });

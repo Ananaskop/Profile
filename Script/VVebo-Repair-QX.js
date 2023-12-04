@@ -19,9 +19,9 @@ let url = $request.url;
 
 // Function to check if a key exists in either $prefs or $persistentStore
 const getValueForKey = (key) => {
-    if ($prefs) {
+    if ($prefs && $prefs.valueForKey) {
         return $prefs.valueForKey(key);
-    } else if ($persistentStore) {
+    } else if ($persistentStore && $persistentStore.read) {
         return $persistentStore.read(key);
     } else {
         return undefined; // Both $prefs and $persistentStore are not available
@@ -30,9 +30,9 @@ const getValueForKey = (key) => {
 
 // Function to set a key-value pair in either $prefs or $persistentStore
 const setValueForKey = (key, value) => {
-    if ($prefs) {
+    if ($prefs && $prefs.setValueForKey) {
         $prefs.setValueForKey(value, key);
-    } else if ($persistentStore) {
+    } else if ($persistentStore && $persistentStore.write) {
         $persistentStore.write(value, key);
     }
     // Ignore if both $prefs and $persistentStore are not available

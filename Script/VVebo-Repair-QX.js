@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js
-// 更新时间：2023-12-04 11:49:14
+// 更新时间：2023-12-04 12:03:40
 /******************************
 QuantumultX 修复 vvebo 用户主页的显示脚本
 参考：https://raw.githubusercontent.com/suiyuran/stash/main/override/fix-vvebo.stoverride
@@ -16,32 +16,13 @@ hostname = api.weibo.cn
 *****************************************/
 
 let url = $request.url;
-
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
-
 if (url.includes("users/show")) {
-    handleUsersShowRequest();
-} else if (url.includes("statuses/user_timeline")) {
-    handleUserTimelineRequest();
-} else if (url.includes("profile/statuses/tab")) {
-    handleProfileStatusesTabRequest();
-} else {
+    $prefs.setValueForKey(getUid(url), "weibouid");
     $done({});
-}
-
-function handleUsersShowRequest() {
-    let uid = getUid(url);
-    if (uid) {
-        $persistentStore.write(uid, "uid");
-        $done({});
-    } else {
-        $done({});
-    }
-}
-
-function handleUserTimelineRequest() {
-    try {
+} else if (url.includes("statuses/user_timeline")) {
+    try{
         let data = JSON.parse($response.body);
         let statuses = data.cards
             .map((card) => (card.card_group ? card.card_group : card))
@@ -56,7 +37,7 @@ function handleUserTimelineRequest() {
                 total_number: 100
             })
         });
-    } catch (error) {
+    } catch {
         let uid = getUid(url) || $prefs.valueForKey("weibouid");
         url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
         url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
@@ -64,9 +45,9 @@ function handleUserTimelineRequest() {
             url
         });
     }
-}
 
-function handleProfileStatusesTabRequest() {
+} else if (url.includes("profile/statuses/tab")) {
     console.log('ss');
+} else {
     $done({});
 }

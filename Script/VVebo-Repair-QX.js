@@ -3,6 +3,8 @@ let url = $request.url;
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
 
+let uid;
+
 if (url.includes("users/show")) {
   if (typeof $persistentStore !== 'undefined') {
     $persistentStore.write(getUid(url), "uid");
@@ -12,9 +14,9 @@ if (url.includes("users/show")) {
   $done({});
 } else if (url.includes("statuses/user_timeline")) {
   if (typeof $persistentStore !== 'undefined') {
-    let uid = getUid(url) || $persistentStore.read("uid");
+    uid = getUid(url) || $persistentStore.read("uid");
   } else {
-    let uid = getUid(url) || $prefs.valueForKey("uid");
+    uid = getUid(url) || $prefs.valueForKey("uid");
   }
   url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
   url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;

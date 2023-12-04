@@ -1,26 +1,24 @@
-// 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
-// 更新时间：2023-12-04 12:03:41
 let url = $request.url;
 
-// Function to check if a key exists in either $prefs or $persistentStore
+// 函数：检查在 $prefs 或 $persistentStore 中是否存在某个键
 const getValueForKey = (key) => {
     if ($prefs && $prefs.valueForKey) {
         return $prefs.valueForKey(key);
     } else if ($persistentStore && $persistentStore.read) {
         return $persistentStore.read(key);
     } else {
-        return undefined; // Both $prefs and $persistentStore are not available
+        return undefined; // $prefs 和 $persistentStore 都不可用
     }
 };
 
-// Function to set a key-value pair in either $prefs or $persistentStore
+// 函数：在 $prefs 或 $persistentStore 中设置键值对
 const setValueForKey = (key, value) => {
     if ($prefs && $prefs.setValueForKey) {
         $prefs.setValueForKey(value, key);
     } else if ($persistentStore && $persistentStore.write) {
         $persistentStore.write(value, key);
     }
-    // Ignore if both $prefs and $persistentStore are not available
+    // 如果 $prefs 和 $persistentStore 都不可用，则忽略
 };
 
 let hasUid = (url) => url.includes("uid");
@@ -36,12 +34,11 @@ if (url.includes("users/show")) {
         url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
         $done({ url });
     } else {
-        // Handle the case when uid is not available
+        // 处理 uid 不可用的情况
         $done({});
     }
 } else if (url.includes("profile/statuses/tab")) {
-    console.log('ss');
+    console.log('修复时间线日志');
 } else {
     $done({});
 }
-

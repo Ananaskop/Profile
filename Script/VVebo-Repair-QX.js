@@ -1,5 +1,20 @@
-// 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
-// 更新时间：2023-12-04 12:03:41
+// 引用地址：https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js
+// 更新时间：2023-12-04 12:03:40
+/******************************
+QuantumultX 修复 vvebo 用户主页的显示脚本
+参考：https://raw.githubusercontent.com/suiyuran/stash/main/override/fix-vvebo.stoverride
+*************************
+
+[mitm]
+hostname = api.weibo.cn
+[rewrite_local]
+^https:\/\/api\.weibo\.cn\/2\/users\/show\? url script-request-header https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js
+^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\? url script-request-header https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js
+^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\? url script-response-body https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js
+*************************
+
+*****************************************/
+
 let url = $request.url;
 
 // Function to check if a key exists in either $prefs or $persistentStore

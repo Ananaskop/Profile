@@ -16,13 +16,32 @@ hostname = api.weibo.cn
 *****************************************/
 
 let url = $request.url;
+
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
+
 if (url.includes("users/show")) {
-    $prefs.setValueForKey(getUid(url), "weibouid");
-    $done({});
+    handleUsersShowRequest();
 } else if (url.includes("statuses/user_timeline")) {
-    try{
+    handleUserTimelineRequest();
+} else if (url.includes("profile/statuses/tab")) {
+    handleProfileStatusesTabRequest();
+} else {
+    $done({});
+}
+
+function handleUsersShowRequest() {
+    let uid = getUid(url);
+    if (uid) {
+        $persistentStore.write(uid, "uid");
+        $done({});
+    } else {
+        $done({});
+    }
+}
+
+function handleUserTimelineRequest() {
+    try {
         let data = JSON.parse($response.body);
         let statuses = data.cards
             .map((card) => (card.card_group ? card.card_group : card))
@@ -37,7 +56,7 @@ if (url.includes("users/show")) {
                 total_number: 100
             })
         });
-    } catch {
+    } catch (error) {
         let uid = getUid(url) || $prefs.valueForKey("weibouid");
         url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
         url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
@@ -45,9 +64,9 @@ if (url.includes("users/show")) {
             url
         });
     }
+}
 
-} else if (url.includes("profile/statuses/tab")) {
+function handleProfileStatusesTabRequest() {
     console.log('ss');
-} else {
     $done({});
 }

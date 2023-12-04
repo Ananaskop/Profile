@@ -220,7 +220,7 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 移除淘宝开屏广告 = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Common-ADs-Remove.js
 
 # 京东
-移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/JD-ADs-Remove.js
+移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/JD-ADs-Remove.js
 
 # 小红书
 详情页,小部件广告 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/note\/widgets, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Xiaohongshu-ADs-Remove.js

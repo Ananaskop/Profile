@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js
-// 更新时间：2023-12-04 12:03:40
+// 更新时间：2023-12-04 15:07:12
 /******************************
 QuantumultX 修复 vvebo 用户主页的显示脚本
 参考：https://raw.githubusercontent.com/suiyuran/stash/main/override/fix-vvebo.stoverride
@@ -16,47 +16,38 @@ hostname = api.weibo.cn
 *****************************************/
 
 let url = $request.url;
-
-// Function to check if a key exists in either $prefs or $persistentStore
-const getValueForKey = (key) => {
-    if ($prefs && $prefs.valueForKey) {
-        return $prefs.valueForKey(key);
-    } else if ($persistentStore && $persistentStore.read) {
-        return $persistentStore.read(key);
-    } else {
-        return undefined; // Both $prefs and $persistentStore are not available
-    }
-};
-
-// Function to set a key-value pair in either $prefs or $persistentStore
-const setValueForKey = (key, value) => {
-    if ($prefs && $prefs.setValueForKey) {
-        $prefs.setValueForKey(value, key);
-    } else if ($persistentStore && $persistentStore.write) {
-        $persistentStore.write(value, key);
-    }
-    // Ignore if both $prefs and $persistentStore are not available
-};
-
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
-
 if (url.includes("users/show")) {
-    setValueForKey("uid", getUid(url));
+    $prefs.setValueForKey(getUid(url), "weibouid");
     $done({});
 } else if (url.includes("statuses/user_timeline")) {
-    let uid = getUid(url) || getValueForKey("uid");
-    if (uid) {
+    try{
+        let data = JSON.parse($response.body);
+        let statuses = data.cards
+            .map((card) => (card.card_group ? card.card_group : card))
+            .flat()
+            .filter((card) => card.card_type === 9)
+            .map((card) => card.mblog);
+        let sinceId = data.cardlistInfo.since_id;
+        $done({
+            body: JSON.stringify({
+                statuses,
+                since_id: sinceId,
+                total_number: 100
+            })
+        });
+    } catch {
+        let uid = getUid(url) || $prefs.valueForKey("weibouid");
         url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
         url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
-        $done({ url });
-    } else {
-        // Handle the case when uid is not available
-        $done({});
+        $done({
+            url
+        });
     }
+
 } else if (url.includes("profile/statuses/tab")) {
     console.log('ss');
 } else {
     $done({});
 }
-

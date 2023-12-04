@@ -8,9 +8,9 @@ let uid;
 
 if (url.includes("users/show")) {
   if (typeof $persistentStore !== 'undefined') {
-    $persistentStore.write(getUid(url), "uid");
+    $persistentStore.write(getUid(url), "weibouid");
   } else {
-    $prefs.setValueForKey(getUid(url), "uid");
+    $prefs.setValueForKey(getUid(url), "weibouid");
   }
   $done({});
 } else if (url.includes("statuses/user_timeline")) {
@@ -31,9 +31,9 @@ if (url.includes("users/show")) {
         });
     } catch (error) {
         if (typeof $persistentStore !== 'undefined') {
-            uid = getUid(url) || $persistentStore.read("uid");
+            uid = getUid(url) || $persistentStore.read("weibouid");
         } else {
-            uid = getUid(url) || $prefs.valueForKey("uid");
+            uid = getUid(url) || $prefs.valueForKey("weibouid");
         }
         url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
         url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;

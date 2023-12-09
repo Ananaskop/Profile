@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/xiaohongshu.js
-// 更新时间：2023-12-09 02:12:20
+// 更新时间：2023-12-09 08:44:24
 // 2023-11-20 21:35
 
 const url = $request.url;

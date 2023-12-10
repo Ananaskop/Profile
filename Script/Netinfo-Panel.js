@@ -103,7 +103,7 @@ function getIP() {
  */
 function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
     // send http request
-    httpMethod.get('http://ip-api.com/json/24.48.0.1?lang=zh-CN&fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,asname,query').then(response => {
+    httpMethod.get('http://ip-api.com/json/?lang=zh-CN&fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,asname,query').then(response => {
         if (Number(response.status) > 300) {
             throw new Error(`错误信息: ${response.status}\n${response.data}`);
         }

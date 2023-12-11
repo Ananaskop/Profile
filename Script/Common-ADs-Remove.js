@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js
-// 更新时间：2023-12-11 02:11:09
+// 更新时间：2023-12-11 08:46:34
 // 2023-11-29 10:15
 
 const url = $request.url;

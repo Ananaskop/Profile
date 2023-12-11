@@ -1,6 +1,6 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js
-// 更新时间：2023-12-11 14:13:27
-// 2023-11-29 10:15
+// 更新时间：2023-12-11 20:18:55
+// 2023-12-11 17:00
 
 const url = $request.url;
 const isResp = typeof $response !== "undefined";
@@ -8,7 +8,7 @@ let body = $response.body;
 
 switch (isResp) {
   // 嘀嗒出行-开屏广告
-  case /^https:\/\/capis(-?\w*)?\.didapinche\.com\/ad\/cx\/startup\?/.test(url):
+  case /^https:\/\/capis(-?\w*)?\.didapinche\.com\/ad\/cx\/startup\?/g.test(url):
     try {
       let obj = JSON.parse(body);
       if (obj.hasOwnProperty("startupPages")) {
@@ -29,7 +29,7 @@ switch (isResp) {
     }
     break;
   // 多点-开屏广告
-  case /^https:\/\/cmsapi\.dmall\.com\/app\/home\/homepageStartUpPic/.test(url):
+  case /^https:\/\/cmsapi\.dmall\.com\/app\/home\/homepageStartUpPic/g.test(url):
     try {
       let obj = JSON.parse(body);
       for (let i = 0; i < obj["data"]["welcomePage"].length; i++) {
@@ -42,17 +42,19 @@ switch (isResp) {
     }
     break;
   // JavDB
-  case /^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/v\d\/\w+/.test(url):
+  case /^https:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/\w+/g.test(url):
     try {
       let obj = JSON.parse(body);
       if (url.includes("/api/v1/ads")) {
-        if (obj?.data?.enabled) {
-          obj.data.enabled = false;
+        // 首页banner
+        if (obj?.data?.ads?.index_top?.length > 0) {
+          obj.data.ads.index_top = obj.data.ads.index_top.filter((i) => /astarte:\/\//g.test(i?.url));
         }
-        if (obj?.data?.ads) {
-          obj.data.ads = {};
+        if (obj?.data?.ads?.web_magnets_top?.length > 0) {
+          obj.data.ads.web_magnets_top = obj.data.ads.web_magnets_top.filter((i) => !/https?:\/\//g.test(i?.url));
         }
       } else if (url.includes("/api/v1/startup")) {
+        // 开屏广告
         if (obj?.data?.splash_ad) {
           obj.data.splash_ad.enabled = false;
           obj.data.splash_ad.overtime = 0;
@@ -68,14 +70,18 @@ switch (isResp) {
           obj.data.user.is_vip = true;
         }
       } else if (url.includes("/api/v1/users")) {
+        // 伪装会员
         if (obj?.data?.user) {
           obj.data.user.vip_expired_at = "2090-12-31T23:59:59.000+08:00";
           obj.data.user.is_vip = true;
         }
       } else if (url.includes("/api/v4/movies/")) {
+        // 详情页banner
         if (obj?.data?.show_vip_banner) {
           obj.data.show_vip_banner = false;
         }
+      } else {
+        $done({});
       }
       body = JSON.stringify(obj);
     } catch (error) {
@@ -83,7 +89,7 @@ switch (isResp) {
     }
     break;
   // 联享家-开屏广告
-  case /^https:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg/.test(url):
+  case /^https:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg/g.test(url):
     try {
       let obj = JSON.parse(body);
       obj.seq = "0";
@@ -96,7 +102,7 @@ switch (isResp) {
     }
     break;
   // 淘宝-开屏视频广告
-  case /^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.cloudvideo\.video\.query/.test(url):
+  case /^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.cloudvideo\.video\.query/g.test(url):
     try {
       let obj = JSON.parse(body);
       if (obj?.data?.duration) {
@@ -117,7 +123,7 @@ switch (isResp) {
     }
     break;
   // 淘宝-开屏图片广告
-  case /^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get/.test(url):
+  case /^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get/g.test(url):
     try {
       let obj = JSON.parse(body);
       if (obj?.data?.containers?.splash_home_base) {
@@ -159,7 +165,7 @@ switch (isResp) {
     }
     break;
   // 淘宝-开屏活动
-  case /^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json/.test(url):
+  case /^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json/g.test(url):
     try {
       let obj = JSON.parse(body);
       if (obj?.res?.images?.length > 0) {
@@ -180,7 +186,7 @@ switch (isResp) {
     }
     break;
   // 小爱音箱-开屏广告
-  case /^https:\/\/hd\.mina\.mi\.com\/splashscreen\/alert/.test(url):
+  case /^https:\/\/hd\.mina\.mi\.com\/splashscreen\/alert/g.test(url):
     try {
       let obj = JSON.parse(body);
       let data = [];
@@ -199,7 +205,7 @@ switch (isResp) {
     }
     break;
   // 小米商城-开屏广告
-  case /^https:\/\/api\.m\.mi\.com\/v1\/app\/start/.test(url):
+  case /^https:\/\/api\.m\.mi\.com\/v1\/app\/start/g.test(url):
     try {
       let obj = JSON.parse(body);
       if (obj?.data?.skip_splash) {
@@ -214,7 +220,7 @@ switch (isResp) {
     }
     break;
   // 小米商城-物流页推广
-  case /^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView/.test(url):
+  case /^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView/g.test(url):
     try {
       let obj = JSON.parse(body);
       if (obj?.data?.bottom?.ad_info) {

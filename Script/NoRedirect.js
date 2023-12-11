@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js
-// 更新时间：2023-12-11 20:18:54
+// 更新时间：2023-12-12 02:12:48
 /*
 Skip the redirect page.
 

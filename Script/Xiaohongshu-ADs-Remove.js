@@ -1,8 +1,9 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/xiaohongshu.js
-// 更新时间：2023-12-14 08:44:44
-// 2023-11-20 21:35
+// 更新时间：2023-12-14 14:13:01
+// 2023-12-14 12:00
 
 const url = $request.url;
+const isQuanX = typeof $task != "undefined";
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
@@ -53,6 +54,32 @@ if (url.includes("/v1/search/banner_list")) {
             item.share_info.function_entries.unshift(additem);
           }
         }
+        if (item?.images_list?.length > 0) {
+          // live photo 无水印地址
+          let livePhoto = [];
+          for (let i of item.images_list) {
+            if (i?.live_photo?.media?.stream?.h265?.length > 0) {
+              for (let ii of i.live_photo.media.stream.h265) {
+                if (ii?.master_url) {
+                  livePhoto.unshift(ii.master_url);
+                }
+              }
+            }
+          }
+          $prefs.setValueForKey(JSON.stringify(livePhoto), "xiaohongshu_livePhoto");
+        }
+      }
+    }
+  }
+} else if (url.includes("/v1/note/live_photo/save")) {
+  // live photo 保存请求
+  let livePhoto = JSON.parse($prefs.valueForKey("xiaohongshu_livePhoto"));
+  if (obj?.data?.datas?.length > 0) {
+    if (livePhoto?.length > 0) {
+      for (let i = 0; i < obj.data.datas.length; i++) {
+        for (let j = 0; j < livePhoto.length; j++) {
+          obj.data.datas[i].url = livePhoto[j];
+        }
       }
     }
   }
@@ -95,7 +122,7 @@ if (url.includes("/v1/search/banner_list")) {
   // 关注列表
   if (obj?.data?.items?.length > 0) {
     // recommend_user 可能感兴趣的人
-    obj.data.items = obj.data.items.filter((i) => !["recommend_user"].includes(i.recommend_reason));
+    obj.data.items = obj.data.items.filter((i) => !["recommend_user"]?.includes(i.recommend_reason));
   }
 } else if (url.includes("/v4/search/trending")) {
   // 搜索栏
@@ -118,10 +145,10 @@ if (url.includes("/v1/search/banner_list")) {
       if (item?.model_type === "live_v2") {
         // 信息流-直播
         continue;
-      } else if (item?.hasOwnProperty("ads_info")) {
+      } else if (item.hasOwnProperty("ads_info")) {
         // 信息流-赞助
         continue;
-      } else if (item?.hasOwnProperty("card_icon")) {
+      } else if (item.hasOwnProperty("card_icon")) {
         // 信息流-带货
         continue;
       } else if (item?.note_attributes?.includes("goods")) {

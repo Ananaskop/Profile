@@ -1,4 +1,4 @@
-// 引用的地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
+// 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
 // 更新时间：2023-12-15 10:42:00
 let url = $request.url;
 let hasUid = (url) => url.includes("uid");

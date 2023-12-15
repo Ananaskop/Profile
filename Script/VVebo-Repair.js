@@ -1,22 +1,13 @@
 // 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
-// 更新时间：2023-12-15 10:42:00
+// 更新时间：2023-12-15 11:16:49
 let url = $request.url;
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
-const isQuanX = typeof $task !== "undefined";
 if (url.includes("users/show")) {
-  if (isQuanX) {
-    $prefs.setValueForKey(getUid(url), "uid");
-  } else {
-    $persistentStore.write(getUid(url), "uid");
-  }
+  $persistentStore.write(getUid(url), "uid");
   $done({});
 } else if (url.includes("statuses/user_timeline")) {
-  if (isQuanX) {
-    let uid = getUid(url) || $prefs.valueForKey("uid");
-  } else {
-    let uid = getUid(url) || $persistentStore.read("uid");
-  }
+  let uid = getUid(url) || $persistentStore.read("uid");
   url = url.replace("statuses/user_timeline", "profile/statuses/tab").replace("max_id", "since_id");
   url = url + `&containerid=230413${uid}_-_WEIBO_SECOND_PROFILE_WEIBO`;
   $done({ url });

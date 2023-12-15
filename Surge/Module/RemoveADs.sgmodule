@@ -72,9 +72,6 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 # 云闪付 
 ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 
-# 微博
-^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) - reject
-
 [Map Local]
 
 # 高德

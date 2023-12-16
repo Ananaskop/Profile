@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js
-// 更新时间：2023-12-16 20:16:14
+// 更新时间：2023-12-17 02:11:14
 /******************************
 QuantumultX 修复 vvebo 用户主页的显示脚本
 参考：https://raw.githubusercontent.com/suiyuran/stash/main/override/fix-vvebo.stoverride

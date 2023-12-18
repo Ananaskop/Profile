@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/jingdong.js
-// 更新时间：2023-12-18 20:18:30
+// 更新时间：2023-12-19 02:12:27
 // 2023-12-15 08:15
 
 const url = $request.url;

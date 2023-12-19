@@ -5,13 +5,13 @@
 
 [Script]
 # 节假日信息
-Time-card = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Timecard.js
+# Time-card = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Timecard.js
 
 # 机场信息模版  在持续化存储中增加args的key，内容为：url=[URL encode处理后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
 Sub-info = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Sub-info.js
 
 # 网络面板
-Net-info = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Netinfo-Panel.js
+# Net-info = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Netinfo-Panel.js
 
 # 清除DNS缓存
 Flush-DNS = type=generic, timeout=30, ,argument=title=清除DNS缓存&icon=cube&color=#afe59a&server=false, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Flush-DNS.js
@@ -24,13 +24,13 @@ YJCRON = type=cron, cronexp=0 8 * * *, wake-system=1, timeout=120, script-path=h
 
 [Panel]
 # 节假日信息
-Time-card = script-name=Time-card, update-interval=86400
+# Time-card = script-name=Time-card, update-interval=86400
 
 # 机场信息模版
 Sub-info = script-name=Sub-info, update-interval=3600
 
 # 网络面板
-Net-info = style=info, script-name=Net-info, update-interval=600
+# Net-info = style=info, script-name=Net-info, update-interval=600
 
 # 清除DNS缓存
 Flush-DNS = script-name=Flush-DNS, update-interval=43200

@@ -1,9 +1,9 @@
 // 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
-// 更新时间：2023-12-23 08:42:29
+// 更新时间：2023-12-23 14:11:50
 let url = $request.url;
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
-if (url.includes("users/show")) {
+if (url.includes("remind/unread_count")) {
   $persistentStore.write(getUid(url), "uid");
   $done({});
 } else if (url.includes("statuses/user_timeline")) {

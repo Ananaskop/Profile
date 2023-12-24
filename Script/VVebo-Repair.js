@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
-// 更新时间：2023-12-24 14:11:48
+// 更新时间：2023-12-24 20:15:49
 let url = $request.url;
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);
@@ -17,7 +17,8 @@ if (url.includes("remind/unread_count")) {
     .map((card) => (card.card_group ? card.card_group : card))
     .flat()
     .filter((card) => card.card_type === 9)
-    .map((card) => card.mblog);
+    .map((card) => card.mblog)
+    .map((status) => (status.isTop ? { ...status, label: "置顶" } : status));
   let sinceId = data.cardlistInfo.since_id;
   $done({ body: JSON.stringify({ statuses, since_id: sinceId, total_number: 100 }) });
 } else {

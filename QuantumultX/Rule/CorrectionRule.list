@@ -1,3 +1,6 @@
+HOST,cu.emby.ws,direct
+HOST,ct.emby.ws,direct
+HOST,cm.emby.ws,direct
 HOST,dig.bdurl.net,direct
 HOST-SUFFIX,byteimg.com,direct
 HOST,ad.12306.cn,direct

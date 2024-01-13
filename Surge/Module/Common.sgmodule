@@ -26,8 +26,7 @@ DOMAIN,free-aos-cdn-image.amap.com,REJECT
 ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 ^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order\/car\/king_toolbox_car_bubble)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order_web\/friendly_information|tips\/onscene_visual_optimization)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization)\? data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 
 # 菜鸟
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
@@ -42,31 +41,32 @@ DOMAIN,free-aos-cdn-image.amap.com,REJECT
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 
 [Script]
+# 阿里巴巴通用广告
+移除阿里巴巴通用广告请求 = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amdc-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
 
 # 高德
-移除阿里巴巴通用广告请求 = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amdc-ADs-Remove.js
-移除导航详情页扰人组件 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/routePlan\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除导航详情页扰人组件 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail)\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除导航详情页扰人组件 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除导航详情页扰人组件 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location)\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除首页扰人组件 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page)\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除首页扰人组件 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除我的页面扰人组件 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除附近页推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除开屏广告 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除打车页推广 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-移除打车页推广 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js
-
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/routePlan\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail)\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location)\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page)\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information)\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+高德地图 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amap-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
 # 菜鸟
-移除首页推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Cainiao-ADs-Remove.js
-移除首页推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Cainiao-ADs-Remove.js
-移除消息中心推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Cainiao-ADs-Remove.js
-移除菜鸟小程序推广 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Cainiao-ADs-Remove.js
+移除首页推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Cainiao-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+移除首页推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Cainiao-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+移除消息中心推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Cainiao-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
+移除菜鸟小程序推广 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Cainiao-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
 
 # VVebo修复
 修复时间线 = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/users\/show\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js
 修复时间线 = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js
-修复时间线 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?, requires-body=true, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js
+修复时间线 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/VVebo-Repair.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% acs.m.taobao.com, api.weibo.cn, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, m5-zb.amap.com, m5.amap.com, oss.amap.com, sns.amap.com, amdc.m.taobao.com, www.google.cn, translate.google.cn

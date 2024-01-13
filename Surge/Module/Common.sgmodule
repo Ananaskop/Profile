@@ -41,7 +41,7 @@ DOMAIN,free-aos-cdn-image.amap.com,REJECT
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 
 [Script]
-# 阿里巴巴通用广告
+# 阿里通用去广告
 移除阿里巴巴通用广告请求 = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Script/Amdc-ADs-Remove.js, requires-body=true, max-size=-1, timeout=60
 
 # 高德

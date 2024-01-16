@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Flush-DNS/Moore/Flush-DNS.js
-// 更新时间：2024-01-16 08:46:19
+// 更新时间：2024-01-16 14:13:19
 /*
  * 由@zZPiglet编写
  * 原脚本地址：https://raw.githubusercontent.com/zZPiglet/Task/master/asset/flushDNS.js

@@ -24,3 +24,4 @@ HOST,api.minecraftservices.com,proxy
 HOST,api.mojang.com,proxy
 HOST,easyemby.com,proxy
 HOST-SUFFIX,livednow.com,proxy
+HOST-SUFFIX,bili.bili.rip,proxy

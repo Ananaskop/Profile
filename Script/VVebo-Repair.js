@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js
-// 更新时间：2024-01-23 14:13:34
+// 更新时间：2024-01-23 20:18:33
 let url = $request.url;
 let hasUid = (url) => url.includes("uid");
 let getUid = (url) => (hasUid(url) ? url.match(/uid=(\d+)/)[1] : undefined);

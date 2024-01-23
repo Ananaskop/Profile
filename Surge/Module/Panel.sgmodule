@@ -17,7 +17,7 @@ Sub-info = type=generic, timeout=30, script-path=https://raw.githubusercontent.c
 Flush-DNS = type=generic, timeout=30, argument=title=清除DNS缓存&icon=cube&color=#afe59a&server=false, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Flush-DNS.js
 
 # 流媒体解锁检测
-stream-all = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Stream-All.js
+# stream-all = type=generic, timeout=30, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Stream-All.js
 
 # 油价推送 定时监控每日油价（通知）地区可以填入省份拼音，如果有同音地区 就去下方url找对应的地区 例如http://m.qiyoujiage.com/fujian.shtml 就填写 fujian 在参数里
 YJCRON = type=cron, cronexp=0 8 * * *, wake-system=1, timeout=120, script-path=https://raw.githubusercontent.com/GiveYou32Likes/Profile/master/Script/Push-YJ.js
@@ -36,7 +36,7 @@ Sub-info = script-name=Sub-info, update-interval=3600
 Flush-DNS = script-name=Flush-DNS, update-interval=43200
 
 # 流媒体解锁检测
-stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
+# stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
 
 [Host]
-ip-api.com = 208.95.112.1
+# ip-api.com = 208.95.112.1

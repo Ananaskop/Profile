@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-fans.js
-// 更新时间：2024-02-08 20:16:39
+// 更新时间：2024-02-09 02:11:29
 let url = $request.url;
 if (url.includes("selffans")) {
   let data = JSON.parse($response.body);

@@ -27,7 +27,7 @@ DOMAIN,free-aos-cdn-image.amap.com,REJECT
 # 菜鸟
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v2|index)\.cn data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v2|expose\.mreply|index)\.cn data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(acquire|event|close)\.cn data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get\.cn data="https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/Surge/Mock/reject-dict.json"

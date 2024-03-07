@@ -25,39 +25,6 @@ IP-CIDR,203.205.254.0/23,direct
 #>IPQuery
 HOST,ip.istatmenus.app,direct
 HOST,sms.imagetasks.com,direct
-#>PrivateTracker
-HOST-SUFFIX,acg.rip,direct
-HOST-SUFFIX,animebytes.tv,direct
-HOST-SUFFIX,awesome-hd.me,direct
-HOST-SUFFIX,broadcasthe.net,direct
-HOST-SUFFIX,chdbits.co,direct
-HOST-SUFFIX,classix-unlimited.co.uk,direct
-HOST-SUFFIX,comicat.org,direct
-HOST-SUFFIX,empornium.me,direct
-HOST-SUFFIX,gazellegames.net,direct
-HOST-SUFFIX,hdbits.org,direct
-HOST-SUFFIX,hdchina.org,direct
-HOST-SUFFIX,hddolby.com,direct
-HOST-SUFFIX,hdhome.org,direct
-HOST-SUFFIX,hdsky.me,direct
-HOST-SUFFIX,icetorrent.org,direct
-HOST-SUFFIX,jpopsuki.eu,direct
-HOST-SUFFIX,keepfrds.com,direct
-HOST-SUFFIX,madsrevolution.net,direct
-HOST-SUFFIX,morethan.tv,direct
-HOST-SUFFIX,m-team.cc,direct
-HOST-SUFFIX,myanonamouse.net,direct
-HOST-SUFFIX,nanyangpt.com,direct
-HOST-SUFFIX,ncore.cc,direct
-HOST-SUFFIX,open.cd,direct
-HOST-SUFFIX,ourbits.club,direct
-HOST-SUFFIX,passthepopcorn.me,direct
-HOST-SUFFIX,privatehd.to,direct
-HOST-SUFFIX,pterclub.com,direct
-HOST-SUFFIX,redacted.ch,direct
-HOST-SUFFIX,springsunday.net,direct
-HOST-SUFFIX,tjupt.org,direct
-HOST-SUFFIX,totheglory.im,direct
 #>CNWeb
 HOST,www.4khdr.cn,direct
 HOST,ad.10010.com,direct
@@ -120,6 +87,7 @@ HOST-SUFFIX,staticfile.org,direct
 HOST-SUFFIX,tracking-protection.cdn.mozilla.net,direct
 HOST-SUFFIX,upaiyun.com,direct
 HOST-SUFFIX,aaplimg.com, direct
+#>Apple
 HOST-SUFFIX,apple-cloudkit.com, direct
 HOST-SUFFIX,apple-livephotoskit.com, direct
 HOST-SUFFIX,apple-mapkit.com, direct
@@ -141,6 +109,7 @@ HOST-SUFFIX,itunes.com, direct
 HOST-SUFFIX,me.com, direct
 HOST-SUFFIX,mzstatic.com, direct
 HOST-SUFFIX,smoot.apple.cn, direct
+#>Other
 HOST-KEYWORD,lz-cdn,direct
 HOST-KEYWORD,aw-s.tripcdn.com,direct
 HOST-KEYWORD,trip.com,direct

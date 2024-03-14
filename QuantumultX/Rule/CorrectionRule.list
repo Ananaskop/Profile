@@ -109,6 +109,12 @@ HOST-SUFFIX,itunes.com, direct
 HOST-SUFFIX,me.com, direct
 HOST-SUFFIX,mzstatic.com, direct
 HOST-SUFFIX,smoot.apple.cn, direct
+#>Spark
+DOMAIN-SUFFIX,amplitude.com
+DOMAIN-SUFFIX,firebaseio.com
+DOMAIN-SUFFIX,hockeyapp.net
+DOMAIN-SUFFIX,readdle.com
+DOMAIN-SUFFIX,smartmailcloud.com
 #>Other
 HOST-KEYWORD,lz-cdn,direct
 HOST-KEYWORD,aw-s.tripcdn.com,direct

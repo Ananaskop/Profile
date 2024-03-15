@@ -1,10 +1,10 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js
-// 更新时间：2024-03-15 14:12:36
-// 2024-02-20 17:20
+// 更新时间：2024-03-15 20:16:23
+// 2024-03-15 14:45
 
 const url = $request.url;
 const header = $request.headers;
-const opt12306 = header["Operation-Type"] || header["operation-type"];
+const headopt = header["Operation-Type"] || header["operation-type"];
 const ua = header["User-Agent"] || header["user-agent"];
 const isQuanX = typeof $task !== "undefined";
 
@@ -24,6 +24,7 @@ if (url.includes("/amdc/mobileDispatch")) {
     $done({});
   }
 } else if (url.includes("/mobile.12306.cn/otsmobile/app/mgs/")) {
+  // 12306页面内容
   const list12306 = [
     // "com.cars.otsmobile.bangbangSafe.deciveInfo", // 设备序列号
     // "com.cars.otsmobile.checkLoginStatus", // 登录信息
@@ -41,13 +42,32 @@ if (url.includes("/amdc/mobileDispatch")) {
     // "com.cars.otsmobile.travelPage.initData", // 出行服务
   ];
   if (isQuanX) {
-    if (list12306?.includes(opt12306)) {
+    if (list12306?.includes(headopt)) {
       $done({ status: "HTTP/1.1 404 Not Found" });
     } else {
       $done({});
     }
   } else {
-    if (list12306?.includes(opt12306)) {
+    if (list12306?.includes(headopt)) {
+      $done();
+    } else {
+      $done({});
+    }
+  }
+} else if (url.includes("/mobilepaas.abchina.com.cn:441/mgw")) {
+  // 中国农业银行开屏广告
+  const listbankabc = [
+    "com.bankabc.recommendcenter.homepage.gethpadverinfo",
+    "com.abchina.mbank.common.homepage.getStartParam"
+  ];
+  if (isQuanX) {
+    if (listbankabc?.includes(headopt)) {
+      $done({ status: "HTTP/1.1 404 Not Found" });
+    } else {
+      $done({});
+    }
+  } else {
+    if (listbankabc?.includes(headopt)) {
       $done();
     } else {
       $done({});

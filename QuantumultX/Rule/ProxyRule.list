@@ -20,8 +20,9 @@ HOST,api.minecraftservices.com,proxy
 HOST,api.mojang.com,proxy
 HOST-SUFFIX,livednow.com,proxy
 #>Spark
-DOMAIN-SUFFIX,amplitude.com,proxy
-DOMAIN-SUFFIX,firebaseio.com,proxy
-DOMAIN-SUFFIX,hockeyapp.net,proxy
-DOMAIN-SUFFIX,readdle.com,proxy
-DOMAIN-SUFFIX,smartmailcloud.com,proxy
+HOST-SUFFIX,amplitude.com,proxy
+HOST-SUFFIX,firebaseio.com,proxy
+HOST-SUFFIX,hockeyapp.net,proxy
+HOST-SUFFIX,readdle.com,proxy
+HOST-SUFFIX,smartmailcloud.com,proxy
+HOST-SUFFIX,braze.eu,proxy

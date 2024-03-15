@@ -1,4 +1,15 @@
+HOST,v1.mk,STREAMING
+HOST,notion-api.splitbee.io,STREAMING
+HOST,themoviedb.org,STREAMING
+HOST,thetvdb.com,STREAMING
+HOST,tmdb.org,STREAMING
+HOST,discord.com,STREAMING
+HOST,olevod.com,STREAMING
+HOST,olemovienews.com,STREAMING
+HOST,haiwaikan.com,STREAMING
+HOST,bfvvs.com,STREAMING
+HOST,cdn.venus7202.com,STREAMING
+HOST,cdn.ceres9350.com,STREAMING
+HOST,cdn.efhie.com,STREAMING
 HOST-SUFFIX,bili.bili.rip,STREAMING
-HOST-SUFFIX,ju.dog,STREAMING
-HOST-SUFFIX,mulgore.net,STREAMING
 HOST-SUFFIX,nebula-emby.com,STREAMING

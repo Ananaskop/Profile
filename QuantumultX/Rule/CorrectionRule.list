@@ -1,8 +1,3 @@
-HOST,download.jetbrains.com,direct
-HOST,origin-a.akamaihd.ne,direct
-HOST-SUFFIX,flyert.com,direct
-HOST-SUFFIX,gandi.net,direct
-HOST-SUFFIX,snapdrop.net,direct
 #>Outlook
 HOST,outlook.office365.com,direct
 HOST,smtp-mail.outlook.com,direct
@@ -110,6 +105,11 @@ HOST-SUFFIX,me.com, direct
 HOST-SUFFIX,mzstatic.com, direct
 HOST-SUFFIX,smoot.apple.cn, direct
 #>Other
+HOST,download.jetbrains.com,direct
+HOST,origin-a.akamaihd.ne,direct
+HOST-SUFFIX,flyert.com,direct
+HOST-SUFFIX,gandi.net,direct
+HOST-SUFFIX,snapdrop.net,direct
 HOST-KEYWORD,lz-cdn,direct
 HOST-KEYWORD,aw-s.tripcdn.com,direct
 HOST-KEYWORD,trip.com,direct

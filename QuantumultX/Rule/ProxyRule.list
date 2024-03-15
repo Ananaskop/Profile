@@ -19,3 +19,9 @@ HOST-SUFFIX,ip-api.com,proxy
 HOST,api.minecraftservices.com,proxy
 HOST,api.mojang.com,proxy
 HOST-SUFFIX,livednow.com,proxy
+#>Spark
+DOMAIN-SUFFIX,amplitude.com,proxy
+DOMAIN-SUFFIX,firebaseio.com,proxy
+DOMAIN-SUFFIX,hockeyapp.net,proxy
+DOMAIN-SUFFIX,readdle.com,proxy
+DOMAIN-SUFFIX,smartmailcloud.com,proxy

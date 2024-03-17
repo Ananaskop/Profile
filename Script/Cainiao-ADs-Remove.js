@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js
-// 更新时间：2024-03-17 20:16:16
+// 更新时间：2024-03-18 02:10:26
 // 2024-02-18 15:50
 
 const url = $request.url;

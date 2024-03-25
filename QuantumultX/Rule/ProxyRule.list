@@ -1,6 +1,3 @@
-HOST-SUFFIX,onekey.so,proxy
-HOST-SUFFIX,ip-api.com,proxy
-HOST,api.mojang.com,proxy
 #>Spark
 HOST-SUFFIX,amplitude.com,proxy
 HOST-SUFFIX,firebaseio.com,proxy
@@ -8,3 +5,8 @@ HOST-SUFFIX,hockeyapp.net,proxy
 HOST-SUFFIX,readdle.com,proxy
 HOST-SUFFIX,smartmailcloud.com,proxy
 HOST-SUFFIX,braze.eu,proxy
+#>Other
+HOST-SUFFIX,surfsharkdns.com,proxy
+HOST-SUFFIX,onekey.so,proxy
+HOST-SUFFIX,ip-api.com,proxy
+HOST,api.mojang.com,proxy

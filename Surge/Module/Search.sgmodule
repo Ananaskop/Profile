@@ -7,7 +7,7 @@
 # 以下为Safari全能搜索、需要把Safari的搜索引擎设置为：DuckDuckGo
 
 # bd (bd空格关键词为百度搜索)
-^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ https://www.baidu.com/s?wd=$1 302
+^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ https://www.baidu.com/from/s?word=$1 302
 
 # 谷歌
 #^https:\/\/duckduckgo.com\/\?q=gg\+([^&]+).+ https://www.google.com/search?q=$1 302
@@ -66,7 +66,7 @@
 ^https:\/\/duckduckgo.com\/\?q=tw&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143470&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=tw&urlDesc=
 
 # 无指令 (直接搜索为谷歌搜索)
-^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.baidu.com/s?wd=$1 302
+^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.baidu.com/from/s?word=$1 302
 
 [MITM]
 hostname = %APPEND% duckduckgo.com

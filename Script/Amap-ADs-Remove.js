@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
-// 更新时间：2024-05-04 02:12:12
+// 更新时间：2024-05-04 08:44:31
 // 2024-02-20 19:55
 
 const url = $request.url;

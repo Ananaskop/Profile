@@ -12,6 +12,12 @@ download_links = {
 
 # 循环下载并保存文件
 for url, file_name in download_links.items():
+    # 删除旧文件（如果存在）
+    old_file_path = os.path.join(download_directory, file_name)
+    if os.path.exists(old_file_path):
+        os.remove(old_file_path)
+        print(f"旧文件 '{file_name}' 已删除！")
+
     # 下载文件
     response = requests.get(url)
     content = response.text

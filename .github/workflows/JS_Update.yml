@@ -38,6 +38,9 @@ jobs:
       - name: "更新JS文件"
         run: python Script/UpdateJSFile.py
 
+      - name: "下载规则文件"
+        run: python Script/UpdateRule.py
+      
       - name: "提交文件"
         run: |
           git pull origin main

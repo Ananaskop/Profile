@@ -23,19 +23,20 @@ for url, file_name in download_links.items():
     response = requests.get(url)
     content = response.text
 
-    # 添加更新时间
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    new_content = f"# 更新时间：{now}\n"
-
     # 在每一行的末尾添加",reject"，并替换行首的内容
     lines = content.split("\n")
+    new_content = ""
     for line in lines:
         if line.startswith("#"):
             new_content += line + "\n"
         else:
             line = re.sub(r'^\s*DOMAIN', 'HOST', line)
-            line = re.sub(r'$\s', ',reject\n', line)
-            new_content += line.strip()
+            line = re.sub(r'$\s', ',reject', line)
+            new_content += line.strip() + "\n"
+
+    # 添加更新时间
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    new_content = f"# 更新时间：{now}\n" + new_content
 
     # 移除最后一行的空行（如果有）
     new_content = new_content.strip()

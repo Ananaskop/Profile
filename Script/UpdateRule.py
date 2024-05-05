@@ -1,6 +1,7 @@
 import os
 import requests
 import re
+from datetime import datetime
 
 # 指定下载目录
 download_directory = "QuantumultX/Rule"
@@ -24,7 +25,7 @@ for url, file_name in download_links.items():
 
     # 在每一行的末尾添加",reject"，并替换行首的内容
     lines = content.split("\n")
-    new_content = ""
+    new_content = "# 更新时间：" + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n"
     for line in lines:
         line = re.sub(r'^\s*DOMAIN', 'HOST', line)
         new_content += line.strip() + ",reject\n"

@@ -2,6 +2,7 @@ import os
 import requests
 import re
 from datetime import datetime
+import pytz
 
 # 默认下载目录
 download_directory = "QuantumultX/Rule"
@@ -10,6 +11,11 @@ download_directory = "QuantumultX/Rule"
 download_links = {
     "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Adblock/Adblock.list": "MyAdblock.list",
 }
+
+# 获取当前时间（北京时间）
+beijing_tz = pytz.timezone('Asia/Shanghai')
+now_beijing = datetime.now(beijing_tz)
+now_str = now_beijing.strftime("%Y-%m-%d %H:%M:%S")
 
 # 循环下载并保存文件
 for url, file_name in download_links.items():
@@ -29,14 +35,15 @@ for url, file_name in download_links.items():
     for line in lines:
         if line.startswith("#"):
             new_content += line
-        else:
+        elif line.strip():  # 如果当前行不为空行
             line = re.sub(r'^\s*DOMAIN', 'HOST', line)
             line = re.sub(r'$', ',reject', line)
             new_content += line.strip() + "\n"
+        else:  # 如果当前行为空行
+            new_content += "\n"  # 直接添加空行，不添加",reject"
 
     # 添加更新时间
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    new_content = f"# 更新时间：{now}\n" + new_content
+    new_content = f"# 更新时间：{now_str}\n" + new_content
 
     # 移除最后一行的空行（如果有）
     new_content = new_content.strip()

@@ -28,7 +28,7 @@ for url, file_name in download_links.items():
     new_content = ""
     for line in lines:
         if line.startswith("#"):
-            new_content += line + "\n"
+            new_content += line
         else:
             line = re.sub(r'^\s*DOMAIN', 'HOST', line)
             line = re.sub(r'$', ',reject', line)

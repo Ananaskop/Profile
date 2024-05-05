@@ -34,14 +34,11 @@ for url, file_name in download_links.items():
             new_content += line + "\n"
         else:
             line = re.sub(r'^\s*DOMAIN', 'HOST', line)
-            new_content += line.strip() + ",reject\n"
+            line = re.sub(r'$', ',reject', line)
+            new_content += line.strip()
 
     # 移除最后一行的空行（如果有）
     new_content = new_content.strip()
-
-    # 在末尾添加",reject"，但要检查是否已经以",reject"结尾了
-    if new_content and not new_content.endswith(",reject"):
-        new_content += ",reject\n"
 
     # 写入新文件到指定目录
     file_path = os.path.join(download_directory, file_name)

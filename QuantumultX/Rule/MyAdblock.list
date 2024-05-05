@@ -12636,5 +12636,4 @@ HOST-KEYWORD,adsystem,reject
 HOST-KEYWORD,adwords,reject
 HOST-KEYWORD,appsflyer,reject
 HOST-KEYWORD,omniture,reject
-HOST-KEYWORD,uploadMobileData,reject
-,reject
+HOST-KEYWORD,uploadMobileData

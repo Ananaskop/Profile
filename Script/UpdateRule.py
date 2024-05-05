@@ -31,7 +31,7 @@ for url, file_name in download_links.items():
             new_content += line + "\n"
         else:
             line = re.sub(r'^\s*DOMAIN', 'HOST', line)
-            line = re.sub(r'$\s', ',reject', line)
+            line = re.sub(r'$', ',reject', line)
             new_content += line.strip() + "\n"
 
     # 添加更新时间

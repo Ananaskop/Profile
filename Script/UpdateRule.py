@@ -3,7 +3,7 @@ import requests
 import re
 from datetime import datetime
 
-# 指定下载目录
+# 默认下载目录
 download_directory = "QuantumultX/Rule"
 
 # 定义多个下载链接和对应的文件名
@@ -23,16 +23,24 @@ for url, file_name in download_links.items():
     response = requests.get(url)
     content = response.text
 
+    # 添加更新时间
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    new_content = f"# 更新时间：{now}\n"
+
     # 在每一行的末尾添加",reject"，并替换行首的内容
     lines = content.split("\n")
-    new_content = "# 更新时间：" + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n"
     for line in lines:
-        line = re.sub(r'^\s*DOMAIN', 'HOST', line)
-        new_content += line.strip() + ",reject\n"
+        if line.startswith("#"):
+            new_content += line + "\n"
+        else:
+            line = re.sub(r'^\s*DOMAIN', 'HOST', line)
+            new_content += line.strip() + ",reject\n"
 
-    # 移除最后一行的空行（如果有），并在末尾添加",reject"
+    # 移除最后一行的空行（如果有）
     new_content = new_content.strip()
-    if new_content:
+
+    # 在末尾添加",reject"，但要检查是否已经以",reject"结尾了
+    if new_content and not new_content.endswith(",reject"):
         new_content += ",reject\n"
 
     # 写入新文件到指定目录

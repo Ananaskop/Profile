@@ -47,7 +47,7 @@ jobs:
           git config --local user.email "123@gmail.com"
           git config --local user.name "Gene"
           git add ./*
-          git commit -m "Update JS" -a
+          git commit -m "更新相关文件" -a
       - name: "推送文件"
         uses: ad-m/github-push-action@master
         with:

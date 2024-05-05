@@ -104,6 +104,7 @@ HOST-SUFFIX,me.com, direct
 HOST-SUFFIX,mzstatic.com, direct
 HOST-SUFFIX,smoot.apple.cn, direct
 #>Other
+HOST,boxer.baidu.com,direct
 HOST,download.jetbrains.com,direct
 HOST,origin-a.akamaihd.ne,direct
 HOST-SUFFIX,flyert.com,direct

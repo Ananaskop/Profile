@@ -34,7 +34,7 @@ for url, file_name in download_links.items():
             new_content += line + "\n"
         else:
             line = re.sub(r'^\s*DOMAIN', 'HOST', line)
-            line = re.sub(r'$', ',reject', line)
+            line = re.sub(r'$', ',reject\n', line)
             new_content += line.strip()
 
     # 移除最后一行的空行（如果有）

@@ -1,4 +1,5 @@
 #!name=DNS分流
+#!desc=针对常用服务和本地的地址做DNS分流
 #!category=工具
 [Host]
 uc.cn = server:quic://223.6.6.6:853

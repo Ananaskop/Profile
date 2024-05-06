@@ -1,5 +1,6 @@
 #!name=常用APP去广告
 #!desc=去除菜鸟，高德等APP广告，纯搬运，感谢 @key @kokoryh @RuCu6等大神。
+#!category=去广告
 
 [Rule]
 # 高德

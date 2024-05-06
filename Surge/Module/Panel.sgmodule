@@ -1,6 +1,7 @@
 #!name=面板合集
 #!desc=常用面板与定时脚本
 #!system=ios
+#!category=面板
 
 
 [Script]

@@ -1,6 +1,5 @@
-#!name=[Sukka] Local DNS Mapping
-#!desc=Last Updated: 2024-04-24T06:00:46.804Z
-
+#!name=DNS分流
+#!category=工具
 [Host]
 uc.cn = server:quic://223.6.6.6:853
 *.uc.cn = server:quic://223.6.6.6:853

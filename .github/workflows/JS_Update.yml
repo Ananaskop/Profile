@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: JS_Update
+name: Files_Update
 on:
   push:
     branches:
@@ -39,7 +39,7 @@ jobs:
         run: python Script/UpdateJSFile.py
 
       - name: "下载规则文件"
-        run: python Script/UpdateRule.py
+        run: python Script/UpdateRejectRule.py
       
       - name: "提交文件"
         run: |

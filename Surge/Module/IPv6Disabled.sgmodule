@@ -1,6 +1,6 @@
 #!name=IPv6 关闭
-#!desc=
-#!category=IPv6
+#!desc=自动关闭IPv6
+#!category=工具
 
 [General]
 ipv6 = false

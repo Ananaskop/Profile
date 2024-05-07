@@ -1,6 +1,6 @@
 #!name=IPv6 开启
-#!desc=自动开启IPv6
-#!category=工具
+#!desc=自动开关IPv6，启动其中一个即可
+#!category=IPv6自动切换
 
 [General]
 ipv6 = false

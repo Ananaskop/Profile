@@ -104,10 +104,11 @@ HOST-SUFFIX,me.com, direct
 HOST-SUFFIX,mzstatic.com, direct
 HOST-SUFFIX,smoot.apple.cn, direct
 #>Other
-HOST-SUFFIX,bytegoofy.com,direct
+HOST,baikebcs.bdimg.com,direct
 HOST,boxer.baidu.com,direct
 HOST,download.jetbrains.com,direct
 HOST,origin-a.akamaihd.ne,direct
+HOST-SUFFIX,bytegoofy.com,direct
 HOST-SUFFIX,flyert.com,direct
 HOST-SUFFIX,gandi.net,direct
 HOST-SUFFIX,snapdrop.net,direct

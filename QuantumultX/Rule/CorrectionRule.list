@@ -104,6 +104,7 @@ HOST-SUFFIX,me.com, direct
 HOST-SUFFIX,mzstatic.com, direct
 HOST-SUFFIX,smoot.apple.cn, direct
 #>Other
+HOST,staticsns.cdn.bcebos.com,direct
 HOST,click.simba.taobao.com,direct
 HOST,baikebcs.bdimg.com,direct
 HOST,boxer.baidu.com,direct

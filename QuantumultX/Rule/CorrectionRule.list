@@ -80,29 +80,43 @@ HOST-SUFFIX,ol.epicgames.com,direct
 HOST-SUFFIX,staticfile.org,direct
 HOST-SUFFIX,tracking-protection.cdn.mozilla.net,direct
 HOST-SUFFIX,upaiyun.com,direct
-HOST-SUFFIX,aaplimg.com, direct
+HOST-SUFFIX,aaplimg.com,direct
 #>Apple
-HOST-SUFFIX,apple-cloudkit.com, direct
-HOST-SUFFIX,apple-livephotoskit.com, direct
-HOST-SUFFIX,apple-mapkit.com, direct
-HOST-SUFFIX,apple-support.akadns.net, direct
-HOST-SUFFIX,apple.co, direct
-HOST-SUFFIX,apple.com, direct
-HOST-SUFFIX,apple.com.akadns.net, direct
-HOST-SUFFIX,apple.com.cn, direct
-HOST-SUFFIX,apple.com.edgekey.net, direct
-HOST-SUFFIX,applemusic.com, direct
-HOST-SUFFIX,appstore.com, direct
-HOST-SUFFIX,apzones.com, direct
-HOST-SUFFIX,cdn-apple.com, direct
-HOST-SUFFIX,icloud-content.com, direct
-HOST-SUFFIX,icloud.com, direct
-HOST-SUFFIX,icloud.com.akadns.net, direct
-HOST-SUFFIX,icloud.com.cn, direct
-HOST-SUFFIX,itunes.com, direct
-HOST-SUFFIX,me.com, direct
-HOST-SUFFIX,mzstatic.com, direct
-HOST-SUFFIX,smoot.apple.cn, direct
+HOST-SUFFIX,apple-cloudkit.com,direct
+HOST-SUFFIX,apple-livephotoskit.com,direct
+HOST-SUFFIX,apple-mapkit.com,direct
+HOST-SUFFIX,apple-support.akadns.net,direct
+HOST-SUFFIX,apple.co,direct
+HOST-SUFFIX,apple.com,direct
+HOST-SUFFIX,apple.com.akadns.net,direct
+HOST-SUFFIX,apple.com.cn,direct
+HOST-SUFFIX,apple.com.edgekey.net,direct
+HOST-SUFFIX,applemusic.com,direct
+HOST-SUFFIX,appstore.com,direct
+HOST-SUFFIX,apzones.com,direct
+HOST-SUFFIX,cdn-apple.com,direct
+HOST-SUFFIX,icloud-content.com,direct
+HOST-SUFFIX,icloud.com,direct
+HOST-SUFFIX,icloud.com.akadns.net,direct
+HOST-SUFFIX,icloud.com.cn,direct
+HOST-SUFFIX,itunes.com,direct
+HOST-SUFFIX,me.com,direct
+HOST-SUFFIX,mzstatic.com,direct
+HOST-SUFFIX,smoot.apple.cn,direct
+#>Zoho
+HOST-SUFFIX,zoho.com,direct
+HOST-SUFFIX,zoho.com.au,direct
+HOST-SUFFIX,zoho.eu,direct
+HOST-SUFFIX,zoho.in,direct
+HOST-SUFFIX,zohocdn.com,direct
+HOST-SUFFIX,zohomeetups.com,direct
+HOST-SUFFIX,zohomerchandise.com,direct
+HOST-SUFFIX,zohopublic.com,direct
+HOST-SUFFIX,zohoschools.com,direct
+HOST-SUFFIX,zohostatic.com,direct
+HOST-SUFFIX,zohostatic.in,direct
+HOST-SUFFIX,zohouniversity.com,direct
+HOST-SUFFIX,zohowebstatic.com,direct
 #>Other
 HOST,staticsns.cdn.bcebos.com,direct
 HOST,click.simba.taobao.com,direct

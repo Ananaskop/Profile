@@ -3,7 +3,7 @@
 #!category=IPv6自动切换
 
 [General]
-ipv6 = true
+ipv6 = false
 ipv6-vif = always
 
 [Script]

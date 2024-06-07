@@ -21,9 +21,6 @@ HOST-SUFFIX,sharepointonline.com,direct
 HOST-SUFFIX,skydrive.wns.windows.com,direct
 HOST-SUFFIX,spoprod-a.akamaihd.net,direct
 HOST-SUFFIX,storage.msn.com,direct
-HOST-KEYWORD,1drv,direct
-HOST-KEYWORD,onedrive,direct
-HOST-KEYWORD,skydrive,direct
 USER-AGENT,OneDrive*,direct
 USER-AGENT,OneDriveiOSApp*,direct
 #>Steam

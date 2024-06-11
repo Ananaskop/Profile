@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js
-// 更新时间：2024-06-11 02:13:51
+// 更新时间：2024-06-11 08:49:43
 // 2024-03-15 14:45
 
 const url = $request.url;

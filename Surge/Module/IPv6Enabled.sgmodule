@@ -4,7 +4,7 @@
 
 [General]
 ipv6 = false
-ipv6-vif = always
+ipv6-vif = enable
 
 [Script]
 IPv6 Auto = type=event,event-name=network-changed,script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/IPv6-Auto.js,engine=jsc

@@ -56,9 +56,7 @@ HOST-KEYWORD,steamstore,proxy
 HOST-KEYWORD,steamuserimages,proxy
 
 #>ZLibrary
-HOST,zh.singlelogin.se,proxy
-HOST,zh.1lib.sk,proxy
-HOST,zh.z-library.se,proxy
+HOST-SUFFIX,1lib.sk,proxy
 
 #>Other
 HOST-SUFFIX,surfsharkdns.com,proxy

@@ -57,6 +57,7 @@ HOST-KEYWORD,steamuserimages,proxy
 
 #>ZLibrary
 HOST-SUFFIX,1lib.sk,proxy
+HOST-SUFFIX,articles.sk,proxy
 
 #>Other
 HOST-SUFFIX,surfsharkdns.com,proxy

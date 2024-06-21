@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/smartmimi/conf/master/surge/timecard.js
-// 更新时间：2024-06-21 08:48:36
+// 更新时间：2024-06-21 14:14:59
 var tlist = {
   1: ["端午", "2024-06-10"],
   2: ["中秋", "2024-09-17"],

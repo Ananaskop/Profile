@@ -5,6 +5,7 @@ HOST-SUFFIX,hockeyapp.net,proxy
 HOST-SUFFIX,readdle.com,proxy
 HOST-SUFFIX,smartmailcloud.com,proxy
 HOST-SUFFIX,braze.eu,proxy
+HOST-SUFFIX,sparkmailapp.com,proxy
 
 #>Steam
 HOST,steambroadcast.akamaized.net,proxy

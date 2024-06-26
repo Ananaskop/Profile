@@ -37,9 +37,6 @@ jobs:
 
       - name: "更新JS文件"
         run: python Script/UpdateJSFile.py
-
-      - name: "下载规则文件"
-        run: python Script/UpdateRejectRule.py
       
       - name: "提交文件"
         run: |

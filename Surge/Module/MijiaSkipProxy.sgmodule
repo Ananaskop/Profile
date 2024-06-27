@@ -1,5 +1,5 @@
-#!name=米家跳过代理
-#!desc=解决米家打开缓慢问题
+#!name=SkipProxyList
+#!desc=常用地址跳过代理
 #!category=工具
 
 [General]

@@ -2,6 +2,7 @@
 HOST,outlook.office365.com,direct
 HOST,smtp-mail.outlook.com,direct
 HOST,smtp.office365.com,direct
+
 #>WindowsServerUpdateServices
 HOST,download.microsoft.com,direct
 HOST,wustat.windows.com,direct
@@ -30,15 +31,6 @@ HOST-KEYWORD,skydrive,direct
 USER-AGENT,OneDrive*,direct
 USER-AGENT,OneDriveiOSApp*,direct
 
-#>Steam
-HOST-SUFFIX,cm.steampowered.com,direct
-HOST-SUFFIX,steamserver.net,direct
-
-#>Tencent
-IP-CIDR,182.254.116.0/24,direct
-IP-CIDR,203.205.238.0/23,direct
-IP-CIDR,203.205.254.0/23,direct
-
 #>IPQuery
 HOST,ip.istatmenus.app,direct
 HOST,sms.imagetasks.com,direct
@@ -65,9 +57,6 @@ HOST,sycm.mmstat.com,direct
 HOST,tracking.miui.com,direct
 HOST,vd.l.qq.com,direct
 HOST,vi.l.qq.com,direct
-HOST,cu.emby.ws,direct
-HOST,ct.emby.ws,direct
-HOST,cm.emby.ws,direct
 HOST,dig.bdurl.net,direct
 HOST,ad.12306.cn,direct
 HOST,amdc.m.taobao.com,direct

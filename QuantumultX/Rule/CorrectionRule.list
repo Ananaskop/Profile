@@ -133,6 +133,7 @@ HOST-SUFFIX,zohouniversity.com,direct
 HOST-SUFFIX,zohowebstatic.com,direct
 
 #>Other
+HOST,bili.bili.rip,direct
 HOST,staticsns.cdn.bcebos.com,direct
 HOST,click.simba.taobao.com,direct
 HOST,baikebcs.bdimg.com,direct

@@ -702,7 +702,6 @@ HOST-SUFFIX,onedrive.com,direct
 HOST-SUFFIX,sharepoint.com,direct
 HOST-SUFFIX,sharepointonline.com,direct
 HOST-SUFFIX,spoprod-a.akamaihd.net,direct
-HOST-WILDCARD,onedrive.*,direct
 HOST-KEYWORD,microsoft,direct
 HOST-KEYWORD,1drv,direct
 HOST-KEYWORD,onedrive,direct

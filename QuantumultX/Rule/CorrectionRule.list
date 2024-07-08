@@ -3,14 +3,10 @@ HOST,outlook.office365.com,direct
 HOST,smtp-mail.outlook.com,direct
 HOST,smtp.office365.com,direct
 
-#>WindowsServerUpdateServices
-HOST,download.microsoft.com,direct
+#>Microsoft
 HOST,wustat.windows.com,direct
-HOST,ntservicepack.microsoft.com,direct
-HOST-SUFFIX,dl.delivery.mp.microsoft.com,direct
-HOST-SUFFIX,update.microsoft.com,direct
 HOST-SUFFIX,windowsupdate.com,direct
-HOST-SUFFIX,windowsupdate.microsoft.com,direct
+HOST-SUFFIX,microsoft.com,direct
 
 #>OneDrive
 HOST-SUFFIX,1drv.com,direct

@@ -1,7 +1,4 @@
 HOST,imge.dangbei.net,reject
-IP-CIDR,47.110.187.87/32,reject
-IP-CIDR,47.96.15.52/32,reject
-IP-CIDR,116.62.220.39/32,reject
 HOST,ssp.soulapp.cn,reject
 HOST-SUFFIX,1010pic.com,reject
 HOST-SUFFIX,182.254.116.116,reject
@@ -547,3 +544,6 @@ HOST-SUFFIX,xlviiirdr.com,reject
 HOST-SUFFIX,xlviirdr.com,reject
 HOST-SUFFIX,youxi.kugou.com,reject
 HOST-SUFFIX,zeus.ad.xiaomi.com,reject
+IP-CIDR,47.110.187.87/32,reject
+IP-CIDR,47.96.15.52/32,reject
+IP-CIDR,116.62.220.39/32,reject

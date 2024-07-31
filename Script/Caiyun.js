@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js
-// 更新时间：2024-07-31 02:14:17
+// 更新时间：2024-07-31 08:41:29
 // 2024-07-26 22:45
 
 const url = $request.url;

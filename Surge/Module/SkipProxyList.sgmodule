@@ -1,6 +1,0 @@
-#!name=SkipProxyList
-#!desc=常用地址跳过代理
-#!category=工具
-
-[General]
-skip-proxy = %APPEND% localhost, *.local, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.1/32, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, 224.0.0.0/4, 240.0.0.0/4, 255.255.255.255/32, *.crashlytics.com, passenger.t3go.cn, captive.apple.com, seed-sequoia.siri.apple.com, sequoia.apple.com, injections.adguard.org, local.adguard.org, mi.com, *.mi.com, xiaomi.net, *.xiaomi.net, xiaomi.com, *.xiaomi.com, xiaomiyoupin.com, *.xiaomiyoupin.commijia.tech, *.mijia.tech, miot-spec.org, *.miot-spec.org, miui.com, *.miui.com

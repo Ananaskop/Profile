@@ -1,4 +1,3 @@
-AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com))
 DOMAIN,imge.dangbei.net
 DOMAIN,ssp.soulapp.cn
 DOMAIN-SUFFIX,1010pic.com

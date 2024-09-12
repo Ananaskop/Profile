@@ -1,17 +1,9 @@
 #!name=滴滴出行去广告
-#!desc=移除开屏广告、精简首页、底栏和我的页面。
-#!author=ZenmoFeiShi[https://github.com/ZenmoFeiShi], 可莉🅥[https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md]
-#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/DiDi.png
-#!openUrl=https://apps.apple.com/app/id554499054
+#!desc=精简页面
 #!tag=去广告
-#!loon_version=3.2.1(745)
-#!homepage=https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
-#!date=2024-09-08 22:05:03
 
 [Rule]
-# 拦截HTTPDNS
 DOMAIN,hd.xiaojukeji.com,REJECT
-# 拦截广告下发
 DOMAIN,gwp.xiaojukeji.com,REJECT
 AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT

@@ -241,6 +241,7 @@ IP6-CIDR,fe80::/10
 IP6-CIDR,ff00::/8
 
 #>Other
+DOMAIN,polaris.zijieapi.com
 DOMAIN,verify.zijieapi.com
 DOMAIN,bili.bili.rip
 DOMAIN,staticsns.cdn.bcebos.com

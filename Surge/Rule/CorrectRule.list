@@ -241,7 +241,6 @@ IP6-CIDR,fe80::/10
 IP6-CIDR,ff00::/8
 
 #>Other
-DOMAIN,verify.zijieapi.com
 DOMAIN,bili.bili.rip
 DOMAIN,staticsns.cdn.bcebos.com
 DOMAIN,click.simba.taobao.com
@@ -249,6 +248,7 @@ DOMAIN,baikebcs.bdimg.com
 DOMAIN,boxer.baidu.com
 DOMAIN,download.jetbrains.com
 DOMAIN,origin-a.akamaihd.ne
+DOMAIN-SUFFIX,zijieapi.com
 DOMAIN-SUFFIX,bytegoofy.com
 DOMAIN-SUFFIX,flyert.com
 DOMAIN-SUFFIX,as174.com

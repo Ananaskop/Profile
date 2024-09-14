@@ -1,6 +1,6 @@
 #!name=滴滴出行去广告
-#!desc=精简页面
-#!tag=去广告
+#!desc = 移除开屏广告、精简首页、底栏和我的页面，作者：可莉🅥，ZenmoFeiShi。
+#!category=去广告
 
 [Rule]
 DOMAIN,hd.xiaojukeji.com,REJECT
@@ -13,7 +13,7 @@ AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 
 ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds data-type=text data="{}" status-code=200
 
-# ^https:\/\/daijia\.kuaidadi\.com\/gateway data-type=text data="{}" status-code=200
+# ^https:\/\/daijia\.kuaidadi\.com\/gateway data-type=text data="{}" status-code=200 # 屏蔽保证代驾可用
 
 ^https:\/\/freight\.xiaojukeji\.com\/gateway data-type=text data="{}" status-code=200
 

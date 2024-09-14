@@ -22,7 +22,7 @@ AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 [Rewrite]
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget reject-dict
 ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds reject-dict
-# ^https:\/\/daijia\.kuaidadi\.com\/gateway reject-dict # 屏蔽修复代驾
+# ^https:\/\/daijia\.kuaidadi\.com\/gateway reject-dict # 屏蔽保证代驾可用
 ^https:\/\/freight\.xiaojukeji\.com\/gateway reject-dict
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget reject-dict
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast reject-dict

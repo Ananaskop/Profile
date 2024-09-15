@@ -241,7 +241,6 @@ IP6-CIDR,fe80::/10
 IP6-CIDR,ff00::/8
 
 #>Other
-DOMAIN,bili.bili.rip
 DOMAIN,staticsns.cdn.bcebos.com
 DOMAIN,click.simba.taobao.com
 DOMAIN,baikebcs.bdimg.com

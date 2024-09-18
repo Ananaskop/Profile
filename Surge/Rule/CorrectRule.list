@@ -241,6 +241,9 @@ IP6-CIDR,fe80::/10
 IP6-CIDR,ff00::/8
 
 #>Other
+DOMAIN,ad.12306.cn
+DOMAIN,amdc.m.taobao.com
+DOMAIN,ca.iadsdk.apple.com
 DOMAIN,staticsns.cdn.bcebos.com
 DOMAIN,click.simba.taobao.com
 DOMAIN,baikebcs.bdimg.com

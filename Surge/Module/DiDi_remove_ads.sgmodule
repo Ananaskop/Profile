@@ -13,7 +13,7 @@ AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 
 ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds data-type=text data="{}" status-code=200
 
-# ^https:\/\/daijia\.kuaidadi\.com\/gateway data-type=text data="{}" status-code=200 # 屏蔽保证代驾可用
+^https:\/\/daijia\.kuaidadi\.com\/gateway:443 data-type=text data="{}" status-code=200 
 
 ^https:\/\/freight\.xiaojukeji\.com\/gateway data-type=text data="{}" status-code=200
 

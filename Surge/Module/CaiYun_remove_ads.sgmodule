@@ -2,6 +2,10 @@
 #!desc=去除广告，解锁会员，作者：RuCu6。
 #!category=去广告
 
+[Rule]
+DOMAIN, abyss.cyapi.cn, REJECT
+DOMAIN, ad.cyapi.cn, REJECT
+
 [Map Local]
 
 ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/entries|p\/v1\/trial_card\/info|v2\/product) data-type=text data="{}" status-code=200

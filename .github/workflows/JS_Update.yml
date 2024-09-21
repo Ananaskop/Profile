@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Rule_Generate
+name: JS_Update
 on:
   push:
     branches:

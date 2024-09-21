@@ -449,26 +449,26 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGEN
 # 中国农业银行 //mobilepaas.abchina.com.cn
 中国农业银行 = type=http-request, pattern=^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/header.js
 
-# 虎扑
+# 虎扑 //*.hupu.com
 虎扑 = type=http-response, pattern=^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/HP.js, requires-body=true, max-size=-1, timeout=60
 虎扑 = type=http-response, pattern=^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/HP.js, requires-body=true, max-size=-1, timeout=60
 虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/HP.js, requires-body=true, max-size=-1, timeout=60
 虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/HP.js, requires-body=true, max-size=-1, timeout=60
 
-# Keep
+# Keep //kad.gotokeep.com, 42.187.199.248, api.gotokeep.com
 Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Keep.js, requires-body=true, max-size=-1, timeout=60
 Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v\d\/basic, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Keep.js, requires-body=true, max-size=-1, timeout=60
 
-# 拼多多
+# 拼多多 //api.pinduoduo.com, api.yangkeduo.com
 拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/search, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 
-# 航旅纵横
+# 航旅纵横 //114.115.217.129, home.umetrip.com
 航旅纵横 = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Umetrip.js
 
-# 小红书
+# 小红书 //edith.xiaohongshu.com, www.xiaohongshu.com
 小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xiaohongshu.js, requires-body=true
 小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(?:banner|hot)_list, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xiaohongshu.js, requires-body=true
 小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(?:hint|trending), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xiaohongshu.js, requires-body=true
@@ -481,13 +481,13 @@ Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v\d\/b
 小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xiaohongshu.js, requires-body=true
 小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xiaohongshu.js, requires-body=true
 
-# 菜鸟
+# 菜鸟 //cn-acs.m.cainiao.com, guide-acs.m.taobao.com
 菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
 菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
 菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
 菜鸟 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
 
-# 高德地图
+# 高德地图 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/amap.js, requires-body=true
 高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/amap.js, requires-body=true
 高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(?:hotel|launch)\/page\/main\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/amap.js, requires-body=true
@@ -505,24 +505,24 @@ Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v\d\/b
 高德地图 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/amap.js, requires-body=true
 高德地图 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/amap.js, requires-body=true
 
-# 滴滴出行
+# 滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84
 滴滴出行 = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Didichuxing.js, requires-body=true
 滴滴出行 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Didichuxing.js, requires-body=true
 滴滴出行 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Didichuxing.js, requires-body=true
 滴滴出行 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Didichuxing.js, requires-body=true
 滴滴出行 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Didichuxing.js, requires-body=true
 
-# 彩云天气
+# 彩云天气 //api.caiyunapp.com, *.cyapi.cn
 彩云天气 = type=http-response, pattern=^https:\/\/api\.caiyunapp\.com\/v1\/activity\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/caiyun.js, requires-body=true, max-size=-1, timeout=60
 彩云天气 = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(api\/v1\/user_detail|p\/v1\/vip_info|v2\/user), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/caiyun.js, requires-body=true, max-size=-1, timeout=60
 彩云天气 = type=http-response, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/caiyun.js, requires-body=true, max-size=-1, timeout=60
 彩云天气 = type=http-request, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/caiyun.js, timeout=60
 
-# 闲鱼
+# 闲鱼 //acs.m.goofish.com, g-acs.m.goofish.com, dinamicx.alibabausercontent.com
 闲鱼 = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xianyu.js, requires-body=true
 闲鱼 = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xianyu.js, requires-body=true
 
-# 途虎养车
+# 途虎养车 //mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn
 途虎养车 = type=http-response, pattern=^https:\/\/cl-gateway\.tuhu\.cn\/cl-shop-api\/shopTab\/getModuleForC, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/TH.js, requires-body=true, max-size=-1, timeout=60
 途虎养车 = type=http-response, pattern=^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getCmsModuleList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/TH.js, requires-body=true, max-size=-1, timeout=60
 

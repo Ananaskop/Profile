@@ -3,8 +3,27 @@
 #!category=去广告
 
 [Rule]
-# 12306
-DOMAIN,ad.12306.cn,DIRECT
+# 菜鸟
+AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGENT,Cainiao4iPhone*)),REJECT
+DOMAIN,acs4baichuan.m.taobao.com,REJECT
+DOMAIN,adsmind.ugdtimg.com,REJECT
+DOMAIN,amdc.m.youku.com,REJECT
+DOMAIN,api.sm.cn,REJECT
+DOMAIN,apiv4-iyes.youku.com,REJECT
+DOMAIN,baichuan-sdk.alicdn.com,REJECT
+DOMAIN,cad.youku.com,REJECT
+DOMAIN,huichuan-mc.sm.cn,REJECT
+DOMAIN,huichuan.sm.cn,REJECT
+DOMAIN,iyes.youku.com,REJECT
+DOMAIN,m-vali.cp31.ott.cibntv.net,REJECT
+DOMAIN,mc.atm.youku.com,REJECT
+DOMAIN,nbsdk-baichuan.alicdn.com,REJECT
+DOMAIN,pre-acs.youku.com,REJECT
+DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT
+DOMAIN,vali-ugc.cp31.ott.cibntv.net,REJECT
+DOMAIN,yk-ssp.ad.youku.com,REJECT
+DOMAIN,ykad-data.youku.com,REJECT
+DOMAIN,youku-acs.m.taobao.com,REJECT
 
 # 阿里巴巴
 DOMAIN,dns.alidns.com,REJECT
@@ -53,9 +72,6 @@ DOMAIN,lc.map.baidu.com,REJECT
 IP-CIDR,180.76.76.112/32,REJECT,no-resolve
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 
-# 昌原云充
-DOMAIN,m.adyounger.com,REJECT
-
 # Clue 智库
 DOMAIN,api.helloclue.com,REJECT
 DOMAIN,brahe.apptimize.com,REJECT
@@ -63,12 +79,6 @@ DOMAIN,collector.clue.run,REJECT
 DOMAIN,images.ctfassets.net,REJECT
 DOMAIN,mapi.apptimize.com,REJECT
 DOMAIN,md-i-s.apptimize.com,REJECT
-
-# DNS无响应
-DOMAIN,adttrackingprd.hwwt8.com,REJECT
-
-# 放松双眼
-DOMAIN,adservice.sigmob.cn,REJECT
 
 # 工商银行
 DOMAIN,pageviewp.icbc.com.cn,REJECT
@@ -219,7 +229,7 @@ DOMAIN,httpdns.calorietech.com,REJECT
 DOMAIN,hc-ssp.sm.cn,REJECT
 
 # 拼多多
-AND,((URL-REGEX,^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d),(USER-AGENT, *com.xunmeng.pinduoduo*)),REJECT
+AND,((URL-REGEX,^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d),(USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
 AND,((URL-REGEX,^http:\/\/\[s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*\]\/d),(USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
 DOMAIN,titan.pinduoduo.com,REJECT
 DOMAIN,apm.pinduoduo.com,REJECT
@@ -231,32 +241,10 @@ DOMAIN,th-b.pinduoduo.com,REJECT
 DOMAIN,th.pinduoduo.com,REJECT
 
 # 航旅纵横
-URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT
 
 # 小红书
 AND,((PROTOCOL,UDP),(DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
-
-# 菜鸟
-AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGENT,Cainiao4iPhone*)),REJECT
-DOMAIN,acs4baichuan.m.taobao.com,REJECT
-DOMAIN,adsmind.ugdtimg.com,REJECT
-DOMAIN,amdc.m.youku.com,REJECT
-DOMAIN,api.sm.cn,REJECT
-DOMAIN,apiv4-iyes.youku.com,REJECT
-DOMAIN,baichuan-sdk.alicdn.com,REJECT
-DOMAIN,cad.youku.com,REJECT
-DOMAIN,huichuan-mc.sm.cn,REJECT
-DOMAIN,huichuan.sm.cn,REJECT
-DOMAIN,iyes.youku.com,REJECT
-DOMAIN,m-vali.cp31.ott.cibntv.net,REJECT
-DOMAIN,mc.atm.youku.com,REJECT
-DOMAIN,nbsdk-baichuan.alicdn.com,REJECT
-DOMAIN,pre-acs.youku.com,REJECT
-DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT
-DOMAIN,vali-ugc.cp31.ott.cibntv.net,REJECT
-DOMAIN,yk-ssp.ad.youku.com,REJECT
-DOMAIN,ykad-data.youku.com,REJECT
-DOMAIN,youku-acs.m.taobao.com,REJECT
 
 # 高德地图
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGENT,AMapiPhone*)),REJECT
@@ -286,7 +274,20 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGEN
 
 # 闲鱼
 ^https:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/ - reject
+
 [Map Local]
+# 菜鸟
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(?:batch\.show\.v2|expose\.mreply|index)\.cn data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(?:acquire|event|close)\.cn data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:homepage\.merge|tabbar\.marketing)\.get\.cn data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn data-type=text data="{}" status-code=200
+^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200
+
 # 阿里云盘 //*api.alipan.com, member.alipan.com
 ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders data-type=text data="{}" status-code=200
 ^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle data-type=text data="{}" status-code=200
@@ -375,18 +376,6 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGEN
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/guide\/user_banner|v3\/note\/guide) data-type=text data="{}" status-code=200
 ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(?:v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) data-type=text data="{}" status-code=200
 
-# 菜鸟
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(?:batch\.show\.v2|expose\.mreply|index)\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(?:acquire|event|close)\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:homepage\.merge|tabbar\.marketing)\.get\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn data-type=text data="{}" status-code=200
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200
-
 # 高德地图
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? data-type=text data="{}" status-code=200
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) data-type=text data="{}" status-code=200
@@ -428,6 +417,12 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGEN
 ^https:\/\/mkt-gateway\.tuhu\.cn\/mlp-product-search-api\/search\/helper\/defaultAndHotWord data-type=text data="{}" status-code=200
 
 [Script]
+# 菜鸟 //cn-acs.m.cainiao.com, guide-acs.m.taobao.com
+菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
+菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
+菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
+菜鸟 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
+
 # 12306 //ad.12306.cn, mobile.12306.cn
 12306 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/12306.js, requires-body=true
 12306 = type=http-response, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/header.js
@@ -480,12 +475,6 @@ Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v\d\/b
 小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xiaohongshu.js, requires-body=true
 小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xiaohongshu.js, requires-body=true
 小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/xiaohongshu.js, requires-body=true
-
-# 菜鸟 //cn-acs.m.cainiao.com, guide-acs.m.taobao.com
-菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
-菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
-菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
-菜鸟 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
 
 # 高德地图 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/amap.js, requires-body=true

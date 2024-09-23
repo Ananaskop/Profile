@@ -223,11 +223,6 @@ DOMAIN,yandexmetrica.com,REJECT
 # 京东
 URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT
 
-# Keep
-DOMAIN,httpdns.n.netease.com,REJECT
-DOMAIN,httpdns.calorietech.com,REJECT
-DOMAIN,hc-ssp.sm.cn,REJECT
-
 # 拼多多
 AND,((URL-REGEX,^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d),(USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
 AND,((URL-REGEX,^http:\/\/\[s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*\]\/d),(USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
@@ -348,15 +343,6 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGEN
 ^https:\/\/games\.mobileapi\.hupu\.com\/3\/8\.0\.86\/bplcommentapi\/bpl\/score_tab\/groups data-type=text data="{}" status-code=200
 ^https:\/\/games\.mobileapi\.hupu\.com\/3\/8\.0\.86\/bplapi\/banner\/getLocationBanners data-type=text data="{}" status-code=200
 
-# Keep
-^https:\/\/api\.gotokeep\.com\/messenger\/v\d\/conversations\/unread data-type=text data="{}" status-code=200
-^https:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v\d\/ad data-type=text data="{}" status-code=200
-^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad\/preload data-type=text data="{}" status-code=200
-^https:\/\/api\.gotokeep\.com\/search\/v\d\/hotHashtag\/list data-type=text data="{}" status-code=200
-^https:\/\/api\.gotokeep\.com\/search\/v\d\/hotCourse\/list data-type=text data="{}" status-code=200
-^https:\/\/api\.gotokeep\.com\/search\/v\d\/hotword\/list data-type=text data="{}" status-code=200
-^https:\/\/api\.gotokeep\.com\/search\/v\d\/default\/keyword\/list data-type=text data="{}" status-code=200
-
 # 拼多多
 ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash data-type=text data="{}" status-code=200
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order_express_group data-type=text data="{}" status-code=200
@@ -450,10 +436,6 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGEN
 虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/HP.js, requires-body=true, max-size=-1, timeout=60
 虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/HP.js, requires-body=true, max-size=-1, timeout=60
 
-# Keep //kad.gotokeep.com, 42.187.199.248, api.gotokeep.com
-Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Keep.js, requires-body=true, max-size=-1, timeout=60
-Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v\d\/basic, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Keep.js, requires-body=true, max-size=-1, timeout=60
-
 # 拼多多 //api.pinduoduo.com, api.yangkeduo.com
 拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/search, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
@@ -516,4 +498,4 @@ Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v\d\/b
 途虎养车 = type=http-response, pattern=^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getCmsModuleList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/TH.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, kad.gotokeep.com, 42.187.199.248, api.gotokeep.com, api.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, acs.m.goofish.com, g-acs.m.goofish.com, dinamicx.alibabausercontent.com, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn
+hostname = %APPEND% ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, api.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, acs.m.goofish.com, g-acs.m.goofish.com, dinamicx.alibabausercontent.com, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn

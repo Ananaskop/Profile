@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Pinduoduo.js
-// 更新时间：2024-09-23 02:13:24
+// 更新时间：2024-09-23 08:54:28
 // 2024.08.13
 const url = $request.url;
 let obj = JSON.parse($response.body);

@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/12306.js
-// 更新时间：2024-09-24 20:21:32
+// 更新时间：2024-09-25 02:14:52
 // 2024-02-19 10:45
 
 let body = "";

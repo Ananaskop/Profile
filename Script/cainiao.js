@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/cainiao.js
-// 更新时间：2024-09-24 08:54:36
+// 更新时间：2024-09-24 14:16:37
 // 2024-09-04 22:35
 
 const url = $request.url;

@@ -1,6 +1,6 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/amap.js
-// 更新时间：2024-09-26 08:53:50
-// 2024-09-03 21:40
+// 更新时间：2024-09-26 14:16:14
+// 2024-09-26 10:20
 
 const url = $request.url;
 if (!$response.body) $done({});
@@ -320,11 +320,13 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "hotelMustRead", // 订房必读
     // "hotelRooms", // 酒店所有房间
     // "hourHotelRooms", // 钟点房
+    // "houseEvaluationInfo", // 小区居住指数
     "houseList",
     "houseOfficeBrandIntroduction",
     "houseOfficeInfo",
     "houseOfficeNotice",
     "houseOfficeService",
+    "houseShelf", // 小区在售房源
     "house_apart_info",
     "house_buying_agent",
     "house_coupon",
@@ -332,6 +334,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "house_cpt_coupon",
     "house_cpt_grab",
     "house_price",
+    "house_price_v2", // 小区房屋售价
     "house_rent_sale_agency",
     // "human_traffic", // 人流量情况 有统计图
     "image_banner",
@@ -384,6 +387,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "relatedRecommends", // 附近同类型酒店
     // "realtorRealStep",
     "renthouse",
+    "rentSaleHouse", // 小区买卖房屋
     "rentsaleagencyv2",
     "rentsaleagencyv3",
     "rentsalehouse",
@@ -414,9 +418,11 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "searchPlaMap", // 周边推荐
     "second_surround_estate_tab", // 周边房产
     "service_shop", // 中介门店
+    "shopBaseCase", // 小区装修案例
     // "shop_news",
     "smallListBizRec", // 周边热门酒店
     "smallOrListBizRec",
+    // "surroundFacilityInfo", // 小区周边配套
     "surroundHouseTab", //周边房源
     "surroundOldSellHouse", // 同城二手房
     "surroundRentHouse", // 附近租房

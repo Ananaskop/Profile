@@ -37,9 +37,6 @@ DOMAIN,sycm.mmstat.com
 DOMAIN,tracking.miui.com
 DOMAIN,vd.l.qq.com
 DOMAIN,vi.l.qq.com
-DOMAIN,ad.12306.cn
-DOMAIN,amdc.m.taobao.com
-DOMAIN,app.chat.xiaomi.net
 DOMAIN,movie.douban.com
 DOMAIN,mddcloud.com.cn
 DOMAIN,aliyundrive.asia
@@ -242,7 +239,6 @@ DOMAIN,ca.iadsdk.apple.com
 DOMAIN,staticsns.cdn.bcebos.com
 DOMAIN,click.simba.taobao.com
 DOMAIN,baikebcs.bdimg.com
-DOMAIN,boxer.baidu.com
 DOMAIN,download.jetbrains.com
 DOMAIN,origin-a.akamaihd.ne
 DOMAIN-SUFFIX,flyert.com

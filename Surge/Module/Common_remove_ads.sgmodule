@@ -4,7 +4,7 @@
 
 [Rule]
 # 菜鸟
-AND,((URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$),(USER-AGENT,Cainiao4iPhone*)),REJECT-DROP
+AND,((OR,((USER-AGENT,Cainiao*), (USER-AGENT,AMap*))), (URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$)),REJECT-DROP
 DOMAIN,acs4baichuan.m.taobao.com,REJECT
 DOMAIN,adsmind.ugdtimg.com,REJECT
 DOMAIN,amdc.m.youku.com,REJECT

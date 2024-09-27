@@ -4,7 +4,7 @@
 
 [Rule]
 # 菜鸟
-AND,((OR,((USER-AGENT,Cainiao*), (USER-AGENT,AMap*))), (URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$)),REJECT-DROP
+AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT,Cainiao4iPhone*)),REJECT
 DOMAIN,acs4baichuan.m.taobao.com,REJECT
 DOMAIN,adsmind.ugdtimg.com,REJECT
 DOMAIN,amdc.m.youku.com,REJECT
@@ -242,7 +242,7 @@ URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/n
 AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
 
 # 高德地图
-AND,((URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$), (USER-AGENT,AMapiPhone*)),REJECT-DROP
+AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT,AMapiPhone*)),REJECT
 
 # 滴滴出行
 DOMAIN,hd.xiaojukeji.com,REJECT
@@ -255,7 +255,7 @@ DOMAIN,abyss.cyapi.cn,REJECT
 DOMAIN,ad.cyapi.cn,REJECT
 
 # 闲鱼
-AND,((URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$),(USER-AGENT,%E9%97%B2%E9%B1%BC*)),REJECT-DROP
+AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch),(USER-AGENT,%E9%97%B2%E9%B1%BC*)),REJECT
 
 [URL Rewrite]
 # 爱思助手 //list-app-m.i4.cn
@@ -405,6 +405,7 @@ AND,((URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$),(USER-AGENT,%E9%97
 
 [Script]
 # 菜鸟
+菜鸟 = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/header.js, timeout=60
 菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.mine\.main\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
 菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
 菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true

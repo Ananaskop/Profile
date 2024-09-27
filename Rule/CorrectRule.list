@@ -1,17 +1,8 @@
-#>Zoho
-DOMAIN-SUFFIX,zoho.com
-DOMAIN-SUFFIX,zoho.com.au
-DOMAIN-SUFFIX,zoho.eu
-DOMAIN-SUFFIX,zoho.in
-DOMAIN-SUFFIX,zohocdn.com
-DOMAIN-SUFFIX,zohomeetups.com
-DOMAIN-SUFFIX,zohomerchandise.com
-DOMAIN-SUFFIX,zohopublic.com
-DOMAIN-SUFFIX,zohoschools.com
-DOMAIN-SUFFIX,zohostatic.com
-DOMAIN-SUFFIX,zohostatic.in
-DOMAIN-SUFFIX,zohouniversity.com
-DOMAIN-SUFFIX,zohowebstatic.com
+
+# 修正广告拦截
+DOMAIN, ad.12306.cn
+DOMAIN, amdc.m.taobao.com
+DOMAIN, ca.iadsdk.apple.com
 
 #>Lan
 DOMAIN,asusrouter.com

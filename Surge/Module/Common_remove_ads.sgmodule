@@ -405,7 +405,6 @@ AND,((URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$),(USER-AGENT,%E9%97
 
 [Script]
 # 菜鸟
-菜鸟 = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/header.js, requires-body=true
 菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.mine\.main\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
 菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true
 菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Script/cainiao.js, requires-body=true

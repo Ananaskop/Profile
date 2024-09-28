@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
-// 更新时间：2024-09-28 02:14:53
+// 更新时间：2024-09-28 08:53:40
 let persisVal = read("UnblockURLinWeChat");
 let useCache = persisVal.useCache === "true"; //是否在微信中用快照显示被封禁的链接
 let forceRedirect = persisVal.forceRedirect === "true"; //是否在微信中进行强制重定向，允许的情况下可能出现循环重定向

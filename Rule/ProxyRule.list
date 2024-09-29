@@ -1478,9 +1478,24 @@ DOMAIN-SUFFIX,articles.sk
 DOMAIN-SUFFIX,singlelogin.rs
 
 #>Other
+DOMAIN,v1.mk
+DOMAIN,notion-api.splitbee.io
+DOMAIN,themoviedb.org
+DOMAIN,thetvdb.com
+DOMAIN,tmdb.org
+DOMAIN,discord.com
+DOMAIN,olevod.com
+DOMAIN,olemovienews.com
+DOMAIN,haiwaikan.com
+DOMAIN,bfvvs.com
+DOMAIN,cdn.venus7202.com
+DOMAIN,cdn.ceres9350.com
+DOMAIN,cdn.efhie.com
+DOMAIN,api.mojang.com
+DOMAIN-SUFFIX,nebula-emby.com
+DOMAIN-SUFFIX,emby.ws
 DOMAIN-SUFFIX,surfsharkdns.com
 DOMAIN-SUFFIX,onekey.so
 DOMAIN-SUFFIX,ip-api.com
 DOMAIN-SUFFIX,iplce.net
 DOMAIN-SUFFIX,easy2023.com
-DOMAIN,api.mojang.com

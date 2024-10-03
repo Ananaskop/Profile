@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/FleaMarket/FleaMarket_remove_ads.js
-// 更新时间：2024-10-03 08:54:21
+// 更新时间：2024-10-03 14:16:10
 // 2024-08-11 13:53:43
 const url = $request.url;
 let obj = JSON.parse($response.body);

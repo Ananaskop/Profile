@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/baidu/baiduNoRedirect.js
-// 更新时间：2024-10-04 02:15:09
+// 更新时间：2024-10-04 08:54:15
 /*
 引用地址 https://github.com/app2smile/rules/blob/master/js/baidu-no-redirect.js
 

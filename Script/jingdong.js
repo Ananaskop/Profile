@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/jingdong.js
-// 更新时间：2024-10-06 02:13:25
+// 更新时间：2024-10-06 08:58:26
 // 2024-04-18 17:45
 
 const url = $request.url;

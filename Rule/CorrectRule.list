@@ -185,3 +185,8 @@ IP6-CIDR,::/127
 IP6-CIDR,fc00::/7
 IP6-CIDR,fe80::/10
 IP6-CIDR,ff00::/8
+
+#>Other
+DOMAIN-SUFFIX, ibm.com
+DOMAIN-SUFFIX, plex.tv
+AND, ((GEOIP, CN), (DOMAIN, pitaya.bytedance.com)) // 此为抖音和TikTok共用域名，仅国外解析结果走代理

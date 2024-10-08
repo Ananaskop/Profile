@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/adrive.js
-// 更新时间：2024-10-08 20:21:22
+// 更新时间：2024-10-09 02:15:06
 // 2024-07-15 21:30
 
 const url = $request.url;

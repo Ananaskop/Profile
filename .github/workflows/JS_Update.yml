@@ -36,7 +36,7 @@ jobs:
       # Runs a single command using the runners shell
 
       - name: "更新JS文件"
-        run: python Script/UpdateJSFile.py
+        run: python .github/UpdateJSFile.py
 
       - name: "提交文件"
         run: |

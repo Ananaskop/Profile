@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/header.js
-// 更新时间：2024-10-11 20:21:11
+// 更新时间：2024-10-12 02:14:41
 // 2024-08-11 13:40
 
 const url = $request.url;

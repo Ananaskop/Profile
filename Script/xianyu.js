@@ -1,4 +1,4 @@
-// 引用地址：https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/FleaMarket/FleaMarket_remove_ads.js
+// 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/xianyu.js
 // 更新时间：2024-10-11 14:16:22
 // 2024-08-11 13:53:43
 const url = $request.url;

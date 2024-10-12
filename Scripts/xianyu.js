@@ -1,6 +1,6 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/xianyu.js
-// 更新时间：2024-10-12 14:14:35
-// 2024-10-12 12:50
+// 更新时间：2024-10-12 20:19:18
+// 2024-10-12 15:05
 
 const url = $request.url;
 if (!$response) $done({});
@@ -66,7 +66,15 @@ if (url.includes("/mtop.idle.user.page.my.adapter/")) {
 } else if (url.includes("/mtop.taobao.idlemtopsearch.search/")) {
   // 搜索结果广告
   if (obj?.data?.resultList?.length > 0) {
-    obj.data.resultList = obj.data.resultList.filter((i) => i?.data?.item?.main?.exContent?.isAliMaMaAD !== "true");
+    obj.data.resultList = obj.data.resultList.filter(
+      (i) =>
+        !(
+          i?.data?.template?.name === "idlefish_seafood_vote" || // 搜索结果 投票
+          i?.data?.template?.name === "idlefish_search_card_category_select" || // 大家都在搜
+          i?.data?.item?.main?.exContent?.isAliMaMaAD === "true" || // 广告1
+          i?.data?.item?.main?.exContent?.isAliMaMaAD === true // 广告2
+        )
+    );
   }
 }
 

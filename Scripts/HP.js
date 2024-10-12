@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/HP.js
-// 更新时间：2024-10-12 14:14:35
+// 更新时间：2024-10-12 20:19:18
 // 2024-06-14 11:04
 const url = $request.url;
 let obj = JSON.parse($response.body);

@@ -4,6 +4,8 @@ import re
 from requests.exceptions import RequestException
 from datetime import datetime, timedelta, timezone
 
+# 文件夹路径
+folder_path = "Scripts"
 def download_file_from_comment(file_path):
     with open(file_path, 'rb') as file:
         try:
@@ -45,9 +47,6 @@ def download_file_from_comment(file_path):
                 print(f"在文件 {file_path} 中未找到引用地址")
         except Exception as e:
             print(f"发生错误：{e}")
-
-# 文件夹路径
-folder_path = "Scripts"
 
 # 遍历文件夹内的文件
 for filename in os.listdir(folder_path):

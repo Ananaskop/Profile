@@ -47,7 +47,7 @@ def download_file_from_comment(file_path):
             print(f"发生错误：{e}")
 
 # 文件夹路径
-folder_path = "Script"
+folder_path = "Scripts"
 
 # 遍历文件夹内的文件
 for filename in os.listdir(folder_path):

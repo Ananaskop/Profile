@@ -27,7 +27,7 @@ def download_file_from_comment(file_path):
 
                 # 提取文件名
                 _, file_extension = os.path.splitext(os.path.basename(file_path))
-                filename = os.path.join("Scripts", f"{os.path.basename(file_path)}")
+                filename = os.path.join(folder_path, f"{os.path.basename(file_path)}")
 
                 # 获取当前北京时间
                 beijing_time = datetime.now(timezone(timedelta(hours=8)))

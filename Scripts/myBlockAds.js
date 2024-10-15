@@ -1,6 +1,6 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/myBlockAds.js
-// 更新时间：2024-10-15 08:55:10
-// 2024-09-22 12:25
+// 更新时间：2024-10-15 14:16:25
+// 2024-10-15 10:05
 
 const url = $request.url;
 const isResp = typeof $response !== "undefined";
@@ -169,27 +169,13 @@ switch (isResp) {
   case /^https:\/\/api\.m\.mi\.com\/v1\/app\/start/.test(url):
     try {
       let obj = JSON.parse(body);
+      delete obj.data.splash;
       if (obj?.data?.skip_splash) {
         obj.data.skip_splash = true;
-      }
-      if (obj?.data?.splash) {
-        delete obj.data.splash;
       }
       body = JSON.stringify(obj);
     } catch (err) {
       console.log(`小米商城-开屏广告, 出现异常: ` + err);
-    }
-    break;
-  // 小米商城-物流页推广
-  case /^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView/.test(url):
-    try {
-      let obj = JSON.parse(body);
-      if (obj?.data?.bottom?.ad_info) {
-        delete obj.data.bottom.ad_info;
-      }
-      body = JSON.stringify(obj);
-    } catch (err) {
-      console.log(`小米商城-物流页推广, 出现异常: ` + err);
     }
     break;
   // JavDB
@@ -208,15 +194,13 @@ switch (isResp) {
         }
       } else if (url.includes("/api/v1/startup")) {
         // 开屏广告
+        delete obj.data.settings.NOTICE; // 首次进入的提示
         if (obj?.data?.splash_ad) {
           obj.data.splash_ad.enabled = false;
           obj.data.splash_ad.overtime = 0;
         }
         if (obj?.data?.feedback) {
           obj.data.feedback = {};
-        }
-        if (obj?.data?.settings?.NOTICE) {
-          delete obj.data.settings.NOTICE;
         }
         if (obj?.data?.user) {
           // obj.data.user.vip_expired_at = "2090-12-31T23:59:59.000+08:00";

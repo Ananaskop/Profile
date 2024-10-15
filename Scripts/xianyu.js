@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/xianyu.js
-// 更新时间：2024-10-15 20:22:07
+// 更新时间：2024-10-16 02:15:14
 // 2024-10-12 15:05
 
 const url = $request.url;

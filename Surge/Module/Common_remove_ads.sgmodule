@@ -134,8 +134,8 @@ DOMAIN-SUFFIX,ehaier.com,REJECT
 
 #>HttpDNS
 DOMAIN,hdns.ksyun.com,REJECT
-DOMAIN-KEYWORD,httpdns.,REJECT
-DOMAIN-KEYWORD,httpdns-,REJECT
+DOMAIN-KEYWORD,httpdns.,REJECT,extended-matching
+DOMAIN-KEYWORD,httpdns-,REJECT,extended-matching
 
 #>建设银行
 DOMAIN-KEYWORD,adv.ccb.com,REJECT
@@ -242,7 +242,7 @@ DOMAIN,th.pinduoduo.com,REJECT
 URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT
 
 #>小红书
-AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
+AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT
 
 #>高德地图
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT,AMapiPhone*)),REJECT

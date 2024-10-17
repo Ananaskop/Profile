@@ -1,4 +1,4 @@
-// 引用地址：https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Pinduoduo.js
+// 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/pdd.js
 // 更新时间：2024-10-17 08:54:27
 // 2024.08.13
 const url = $request.url;

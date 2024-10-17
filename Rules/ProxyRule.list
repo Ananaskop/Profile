@@ -1496,6 +1496,7 @@ DOMAIN-SUFFIX,nebula-emby.com
 DOMAIN-SUFFIX,emby.ws
 DOMAIN-SUFFIX,surfsharkdns.com
 DOMAIN-SUFFIX,easy2023.com
+DOMAIN-SUFFIX,metacubex.one
 
 #>Cloudflare
 DOMAIN-SUFFIX,cf-ipfs.com

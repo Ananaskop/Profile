@@ -227,16 +227,15 @@ DOMAIN,yandexmetrica.com,REJECT
 URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT
 
 #>拼多多
-AND,((URL-REGEX,^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d),(USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
-AND,((URL-REGEX,^http:\/\/\[s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*\]\/d),(USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
-DOMAIN,titan.pinduoduo.com,REJECT
-# DOMAIN,apm.pinduoduo.com,REJECT
-# DOMAIN,m.pinduoduo.net,REJECT
+AND,((URL-REGEX, ^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d), (USER-AGENT, *com.xunmeng.pinduoduo*)),REJECT
+AND,((URL-REGEX, ^http:\/\/\[s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*\]\/d), (USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
+# DOMAIN, m.pinduoduo.net, REJECT
 DOMAIN,ta-a.pinduoduo.com,REJECT
 DOMAIN,ta.pinduoduo.com,REJECT
 DOMAIN,th-a.pinduoduo.com,REJECT
 DOMAIN,th-b.pinduoduo.com,REJECT
 DOMAIN,th.pinduoduo.com,REJECT
+DOMAIN,titan.pinduoduo.com,REJECT
 
 #>航旅纵横
 URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT
@@ -348,17 +347,14 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGE
 ^https:\/\/games\.mobileapi\.hupu\.com\/3\/8\.0\.86\/bplapi\/banner\/getLocationBanners data-type=text data="{}" status-code=200
 
 #>拼多多
-^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash data-type=text data="{}" status-code=200
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order_express_group data-type=text data="{}" status-code=200
-^https:\/\/api\.pinduoduo\.com\/search_hotquery data-type=text data="{}" status-code=200
-^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data data-type=text data="{}" status-code=200
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/new_chat_group data-type=text data="{}" status-code=200
-^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up data-type=text data="{}" status-code=200
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/personal data-type=text data="{}" status-code=200
+^https:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash\? data-type=text data="{}" status-code=200
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up\? data-type=text data="{}" status-code=200
 ^https:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide data-type=text data="{}" status-code=200
+^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/(?:likes|my_order_group|new_chat_group|order_express_group|personal) data-type=text data="{}" status-code=200
 ^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append data-type=text data="{}" status-code=200
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/my_order_group data-type=text data="{}" status-code=200
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes data-type=text data="{}" status-code=200
+^https:\/\/api\.pinduoduo\.com\/api\/flow\/hungary\/window\/global\/v2\? data-type=text data="{}" status-code=200
+^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data data-type=text data="{}" status-code=200
+^https:\/\/api\.pinduoduo\.com\/search_hotquery\? data-type=text data="{}" status-code=200
 
 #>小红书
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) data-type=text data="{}" status-code=200
@@ -443,19 +439,16 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGE
 中国农业银行 = type=http-request, pattern=^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/header.js
 
 #>虎扑 //*.hupu.com
-虎扑 = type=http-response, pattern=^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, max-size=-1, timeout=60
-虎扑 = type=http-response, pattern=^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, max-size=-1, timeout=60
-虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, max-size=-1, timeout=60
-虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, max-size=-1, timeout=60
+虎扑 = type=http-response, pattern=^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true
+虎扑 = type=http-response, pattern=^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true
+虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true
+虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true
 
 #>拼多多 //api.pinduoduo.com, api.yangkeduo.com
-拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/search, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
-拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
-拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
-拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
+拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true
 
 #>航旅纵横 //114.115.217.129, home.umetrip.com
-航旅纵横 = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Umetrip.js
+航旅纵横 = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Umetrip.js, requires-body=true
 
 #>小红书 //edith.xiaohongshu.com, www.xiaohongshu.com
 小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
@@ -496,9 +489,9 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGE
 滴滴出行 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true
 
 #>彩云天气 //api.caiyunapp.com, *.cyapi.cn
-彩云天气 = type=http-response, pattern=^https:\/\/api\.caiyunapp\.com\/v1\/activity\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true, max-size=-1, timeout=60
-彩云天气 = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(api\/v1\/user_detail|p\/v1\/vip_info|v2\/user), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true, max-size=-1, timeout=60
-彩云天气 = type=http-response, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true, max-size=-1, timeout=60
+彩云天气 = type=http-response, pattern=^https:\/\/api\.caiyunapp\.com\/v1\/activity\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true
+彩云天气 = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(api\/v1\/user_detail|p\/v1\/vip_info|v2\/user), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true
+彩云天气 = type=http-response, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true
 彩云天气 = type=http-request, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, timeout=60
 
 #>闲鱼 //*.m.goofish.com
@@ -508,8 +501,8 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGE
 闲鱼 = type=http-response, pattern=^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xianyu.js, requires-body=true
 
 #>途虎养车 //mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn
-途虎养车 = type=http-response, pattern=^https:\/\/cl-gateway\.tuhu\.cn\/cl-shop-api\/shopTab\/getModuleForC, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/TH.js, requires-body=true, max-size=-1, timeout=60
-途虎养车 = type=http-response, pattern=^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getCmsModuleList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/TH.js, requires-body=true, max-size=-1, timeout=60
+途虎养车 = type=http-response, pattern=^https:\/\/cl-gateway\.tuhu\.cn\/cl-shop-api\/shopTab\/getModuleForC, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/TH.js, requires-body=true
+途虎养车 = type=http-response, pattern=^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getCmsModuleList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/TH.js, requires-body=true
 
 #>百度跳转 //m.baidu.com, www.baidu.com, zhidao.baidu.com
 百度跳转 = type=http-response, pattern=^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/baidu-index.js, requires-body=true

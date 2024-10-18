@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js
-// 更新时间：2024-10-18 08:54:34
+// 更新时间：2024-10-18 09:54:49
 // 2024-08-20 09:49
 /*需要分流禁用掉 
 ip-cidr, 123.207.209.39/32, reject

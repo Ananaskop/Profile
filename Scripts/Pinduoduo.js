@@ -1,26 +1,40 @@
 // 引用地址：https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Pinduoduo.js
-// 更新时间：2024-10-18 08:54:35
-// 2024-10-06 03:10
-
+// 更新时间：2024-10-18 09:54:50
+// 2024.08.13
 const url = $request.url;
-if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-if (url.includes("/api/alexa/homepage/hub")) {
-  // 底部标签栏
-  if (obj?.result) {
-    if (obj?.result?.bottom_tabs?.length > 0) {
-      // 标签栏1
-      obj.result.bottom_tabs = obj.result.bottom_tabs.filter((i) => /(?:chat_list|index|personal)/.test(i?.link));
+try {
+    if (url.includes('/api/alexa/homepage/hub') && obj.result && Array.isArray(obj.result.bottom_tabs)) {
+        obj.result.bottom_tabs = obj.result.bottom_tabs.filter(tab => tab.title !== '多多视频' && tab.title !== '大促会场' && tab.title !== '搜索' && tab.title !== '直播');
+        delete obj.result.icon_set;
+        delete obj.result.search_bar_hot_query;
+        }
+        
+    if (url.includes("/search")) {
+    delete obj.expansion;
+         }
+        
+    if (url.includes('/api/philo/personal/hub')) {
+        delete obj.monthly_card_entrance;
+        delete obj.personal_center_style_v2_vo;
+        if (obj.icon_set) {
+            delete obj.icon_set.icons;
+            delete obj.icon_set.top_personal_icons;
+        }
     }
-    if (obj?.result?.buffer_bottom_tabs?.length > 0) {
-      // 标签栏2
-      obj.result.buffer_bottom_tabs = obj.result.buffer_bottom_tabs.filter((i) => /(?:chat_list|index|personal)/.test(i?.link));
+
+    if (url.includes("/api/oak/integration/render")) {
+        if (obj.ui) {
+            delete obj.ui.bottom_section;  // 限时
+            if (obj.ui.live_section) {
+                delete obj.ui.live_section.float_info;  // 直播
+            }
+        }
+        delete obj.bottom_section_list; // 限时
     }
-    // delete obj.result.icon_set; // 顶部图标 多多买菜 现金大转盘
-    delete obj.result.search_bar_hot_query; // 搜索框填充词
-    delete obj.result.top_skin; // 顶部背景图
-  }
+} catch (error) {
+    
 }
 
-$done({ body: JSON.stringify(obj) });
+$done({body: JSON.stringify(obj)});

@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/amap.js
-// 更新时间：2024-10-19 02:15:05
+// 更新时间：2024-10-19 08:54:01
 // 2024-10-15 09:40
 
 const url = $request.url;

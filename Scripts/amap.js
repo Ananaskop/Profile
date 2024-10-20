@@ -1,4 +1,4 @@
-// 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/amap.js
+// 引用：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/amap.js
 // 更新时间：2024-10-20 20:20:52
 // 2024-10-15 09:40
 

@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/myBlockAds.js
-// 更新时间：2024-10-20 08:59:17
+// 更新时间：2024-10-20 14:15:17
 // 2024-10-15 10:05
 
 const url = $request.url;

@@ -1,4 +1,4 @@
-// 引用地址：https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js
+// 引用：https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js
 // 更新时间：2024-10-21 02:13:48
 // 2024-08-20 09:49
 /*需要分流禁用掉 

@@ -1,4 +1,4 @@
-// 引用地址：https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
+// 引用：https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
 // 更新时间：2024-10-21 08:56:25
 let persisVal = read("UnblockURLinWeChat");
 let useCache = persisVal.useCache === "true"; //是否在微信中用快照显示被封禁的链接

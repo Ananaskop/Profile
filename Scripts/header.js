@@ -1,4 +1,4 @@
-// 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/header.js
+// 引用：https://raw.githubusercontent.com/RuCu6/Loon/refs/heads/main/Scripts/header.js
 // 更新时间：2024-10-20 20:20:52
 // 2024-08-11 13:40
 

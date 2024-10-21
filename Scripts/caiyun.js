@@ -1,4 +1,4 @@
-// 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js
+// 引用：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js
 // 更新时间：2024-10-20 20:20:53
 // 2024-09-01 17:00
 

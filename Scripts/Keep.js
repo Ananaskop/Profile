@@ -1,4 +1,5 @@
 //   2024-05-24 09.38
+const blackList = ["home", "entry", "mall"];
 const url = $request.url;
 let obj = JSON.parse($response.body);
 

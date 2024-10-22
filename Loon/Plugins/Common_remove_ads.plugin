@@ -298,6 +298,11 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGE
 ^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/my_order_group - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes - reject-dict
+^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ reject
+^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union reject
+^https:\/\/images\.pinduoduo\.com\/mrk\/ reject
+^https:\/\/images\.pinduoduo\.com\/marketing_api\/ reject
+
 #>小红书
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) - reject-dict
 ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject-dict
@@ -381,7 +386,7 @@ http-response ^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/
 http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, tag=虎扑
 http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, tag=虎扑
 
-#>拼多多 //api.pinduoduo.com, api.yangkeduo.com
+#>拼多多 //api.pinduoduo.com, api.yangkeduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
 http-response ^https:\/\/api\.pinduoduo\.com\/search script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true, tag=拼多多
 http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true, tag=拼多多
 http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true, tag=拼多多
@@ -448,4 +453,4 @@ http-response ^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCente
 http-response ^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/baidu-index.js, requires-body=true, tag=百度跳转
 
 [MITM]
-hostname = cn-acs.m.cainiao.com, guide-acs.m.taobao.com, ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, api.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com
+hostname = cn-acs.m.cainiao.com, guide-acs.m.taobao.com, ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com

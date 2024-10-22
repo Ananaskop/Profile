@@ -557,7 +557,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
     }
   } else if (url.includes("/2/push/active")) {
     delete obj.compose_add_guide; // 过期的情人节红包
-    // delete obj.feed_redpacket; // 首页右上角红包图标
+    delete obj.feed_redpacket; // 首页右上角红包图标
     delete obj.floating_windows_force_show; // 强制展示的悬浮窗
     delete obj.interceptad; // 可能是首页签到弹窗
     delete obj.interceptad_cardlist; // 可能是首页签到弹窗

@@ -1,8 +1,6 @@
 #!name = 微博
-#!desc = 随时随地刷纯粹的信息流。
-#!author = RuCu6, zmqcherish[https://github.com/zmqcherish]
-#!icon = https://raw.githubusercontent.com/Ananaskop/Loon/main/Icons/app/weibo.png
-#!date = 2024-08-28 08:25:20
+#!desc = 随时随地刷纯粹的信息流，作者：RuCu6
+#!icon = https://raw.githubusercontent.com/Ananaskop/Profile/main/Icons/120px/Weibo.png
 
 [Rule]
 # 请求放行

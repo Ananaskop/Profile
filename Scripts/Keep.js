@@ -4,7 +4,7 @@ let obj = JSON.parse($response.body);
 if (url.includes("/config/v3/basic")) {
   if (obj.data && obj.data.coursePageConfigs && obj.data.coursePageConfigs.courseTabs) {
     obj.data.coursePageConfigs.courseTabs = obj.data.coursePageConfigs.courseTabs.filter(tab => {
-      return tab.name !== "直播" && tab.name !== "会员" && tab.name !== "首页";
+      return tab.name !== "直播" && tab.name !== "会员";
     });
   }
 

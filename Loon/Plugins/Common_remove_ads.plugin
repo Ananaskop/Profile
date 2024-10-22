@@ -217,6 +217,8 @@ AND,((IP-ASN,63646,no-resolve), (DEST-PORT,25641), (PROTOCOL,TCP)),REJECT
 DOMAIN,abyss.cyapi.cn,REJECT
 DOMAIN,ad.cyapi.cn,REJECT
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT,%E9%97%B2%E9%B1%BC*)),REJECT
+#>Keep
+DOMAIN,hc-ssp.sm.cn,REJECT
 
 [Rewrite]
 #>爱思助手 //list-app-m.i4.cn
@@ -350,6 +352,15 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGE
 ^https:\/\/mkt-gateway\.tuhu\.cn\/mkt-cms\/circle\/recommend\/v3 - reject-dict
 ^https:\/\/mkt-gateway\.tuhu\.cn\/mlp-product-search-api\/search\/helper\/defaultAndHotWord - reject-dict
 
+#>Keep
+^https:\/\/api\.gotokeep\.com\/messenger\/v\d\/conversations\/unread - reject-dict
+^https:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v\d\/ad - reject-dict
+^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad\/preload - reject-dict
+^https:\/\/api\.gotokeep\.com\/search\/v\d\/hotHashtag\/list - reject-dict
+^https:\/\/api\.gotokeep\.com\/search\/v\d\/hotCourse\/list - reject-dict
+^https:\/\/api\.gotokeep\.com\/search\/v\d\/hotword\/list - reject-dict
+^https:\/\/api\.gotokeep\.com\/search\/v\d\/default\/keyword\/list - reject-dict
+
 [Script]
 #>菜鸟
 http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/header.js, timeout=60, tag=菜鸟
@@ -452,5 +463,9 @@ http-response ^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCente
 #>百度跳转 //m.baidu.com, www.baidu.com, zhidao.baidu.com
 http-response ^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/baidu-index.js, requires-body=true, tag=百度跳转
 
+#>Keep //kad.gotokeep.com, 42.187.199.248, api.gotokeep.com
+http-response ^https:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Keep.js, requires-body=true, tag=Keep
+http-response ^https:\/\/api\.gotokeep\.com\/config\/v\d\/basic script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Keep.js, requires-body=true, tag=Keep
+
 [MITM]
-hostname = cn-acs.m.cainiao.com, guide-acs.m.taobao.com, ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com
+hostname = cn-acs.m.cainiao.com, guide-acs.m.taobao.com, ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com, kad.gotokeep.com, 42.187.199.248, api.gotokeep.com

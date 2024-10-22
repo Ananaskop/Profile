@@ -1,29 +1,16 @@
-//   2024-05-24 09.38
-const blackList = ["home", "entry", "mall"];
-let obj = JSON.parse($response.body);
-
-obj.data.generalConfigs["AD.link.download.source"] = false;
-// 设置默认开启页面
-obj.data.bottomBarControl.defaultTab = "new_sports";
-
-obj.data.bottomBarControl.tabs = obj.data.bottomBarControl.tabs.filter(
-  (tab) => !blackList.includes(tab.tabType)
-);
-
-$done({ body: JSON.stringify(obj) });
 const url = $request.url;
 let obj = JSON.parse($response.body);
 
 if (url.includes("/config/v3/basic")) {
   if (obj.data && obj.data.coursePageConfigs && obj.data.coursePageConfigs.courseTabs) {
     obj.data.coursePageConfigs.courseTabs = obj.data.coursePageConfigs.courseTabs.filter(tab => {
-      return tab.name !== "直播" && tab.name !== "会员";
+      return tab.name !== "直播" && tab.name !== "会员" && tab.name !== "首页";
     });
   }
 
   if (obj.data && obj.data.bottomBarControl && obj.data.bottomBarControl.tabs) {
     obj.data.bottomBarControl.tabs = obj.data.bottomBarControl.tabs.filter(tab => {
-      return tab.name !== "商城" && tab.name !== "课程";
+      return tab.name !== "商城" && tab.name !== "课程" && tab.name !== "首页";
     });
   }
 }

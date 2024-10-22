@@ -65,15 +65,13 @@ DOMAIN-KEYWORD,safebrowsing.,REJECT
 #>百度
 DOMAIN,mobads.baidu.com,REJECT
 DOMAIN-SUFFIX,pos.baidu.com,REJECT
+IP-CIDR,180.76.76.112/32,REJECT,no-resolve
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 
 #>百度地图
 DOMAIN,afd.baidu.com,REJECT
 DOMAIN,afdconf.baidu.com,REJECT
 DOMAIN,lc.map.baidu.com,REJECT
-
-#>百度
-IP-CIDR,180.76.76.112/32,REJECT,no-resolve
-IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 
 #>Clue 智库
 DOMAIN,api.helloclue.com,REJECT
@@ -96,7 +94,7 @@ DOMAIN,dsp-x.jd.com,REJECT
 DOMAIN,et.tanx.com,REJECT
 DOMAIN,gdfp.gifshow.com,REJECT
 DOMAIN,init.supersonicads.com,REJECT
-#DOMAIN, is.snssdk.com, REJECT
+# DOMAIN,is.snssdk.com,REJECT
 DOMAIN,janapi.jd.com,REJECT
 DOMAIN,mercury-gateway.ixiaochuan.cn,REJECT
 DOMAIN,open.e.kuaishou.com,REJECT
@@ -144,6 +142,7 @@ DOMAIN-KEYWORD,adv.ccb.com,REJECT
 DOMAIN,dns.jd.com,REJECT
 IP-CIDR,101.124.19.122/32,REJECT,no-resolve
 IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
+URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT
 
 #>芒果TV
 DOMAIN,credits.bz.mgtv.com,REJECT
@@ -222,9 +221,6 @@ DOMAIN,switch.cup.com.cn,REJECT
 
 #>Yandex
 DOMAIN,yandexmetrica.com,REJECT
-
-#>京东
-URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT
 
 #>拼多多
 AND,((URL-REGEX, ^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d), (USER-AGENT, *com.xunmeng.pinduoduo*)),REJECT

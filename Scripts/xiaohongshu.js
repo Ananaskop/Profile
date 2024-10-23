@@ -1,5 +1,4 @@
 // 引用：https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/xiaohongshu.js
-// 更新时间：2024-10-20 20:20:52
 // 2024-10-15 10:45
 
 const url = $request.url;

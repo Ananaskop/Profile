@@ -146,7 +146,7 @@ DOMAIN-KEYWORD,adv.ccb.com,REJECT
 DOMAIN,dns.jd.com,REJECT
 IP-CIDR,101.124.19.122/32,REJECT,no-resolve
 IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
-URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\? ,extended-matching,REJECT
+URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT,extended-matching
 
 #>芒果TV
 DOMAIN,credits.bz.mgtv.com,REJECT
@@ -238,7 +238,7 @@ DOMAIN,th.pinduoduo.com,REJECT
 DOMAIN,titan.pinduoduo.com,REJECT
 
 #>航旅纵横
-URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT
+URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT,REJECT,extended-matching
 
 #>小红书
 AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT

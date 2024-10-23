@@ -238,7 +238,7 @@ DOMAIN,th.pinduoduo.com,REJECT
 DOMAIN,titan.pinduoduo.com,REJECT
 
 #>航旅纵横
-URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT,REJECT,extended-matching
+URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT,extended-matching
 
 #>小红书
 AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT

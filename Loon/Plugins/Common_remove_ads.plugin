@@ -3,6 +3,10 @@
 #!icon=https://raw.githubusercontent.com/Ananaskop/Profile/main/Icons/120px/NoAD.png
 #!keyword=去广告
 
+[General]
+#>哔哩哔哩
+force-http-engine-hosts = :8000
+
 [Rule]
 #>菜鸟
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT,Cainiao4iPhone*)),REJECT
@@ -253,6 +257,10 @@ AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGE
 #>Keep
 DOMAIN,hc-ssp.sm.cn,REJECT
 
+#>哔哩哔哩
+URL-REGEX,^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH,REJECT-DICT
+URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-DICT
+
 [Rewrite]
 #>爱思助手 //list-app-m.i4.cn
 ^https:\/\/list-app-m\.i4\.cn\/(?:adclickcb|getHotSearchList|getopfstadinfo)\.xhtml - reject
@@ -416,6 +424,22 @@ DOMAIN,hc-ssp.sm.cn,REJECT
 ^https:\/\/api\.gotokeep\.com\/search\/v\d\/hotword\/list - reject-dict
 ^https:\/\/api\.gotokeep\.com\/search\/v\d\/default\/keyword\/list - reject-dict
 
+#>哔哩哔哩
+^https:\/\/(?:api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download) - reject-dict
+^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? - reject-dict
+^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials\? - reject-dict
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject-dict
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.view\.v1\.View\/TFInfo - reject-dict
+^https:\/\/app\.bilibili\.com\/x\/resource\/ip - reject-dict
+^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp - reject-dict
+(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) $1 302
+(^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) $1 302
+
+[Map Local]
+#>哔哩哔哩
+^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? mock-response-body data-type=json data="{ "code": -404, "message": "啥都木有", "ttl": 1, "data": null }" status-code=200
+
 [Script]
 #>菜鸟
 http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/header.js, timeout=60, tag=菜鸟
@@ -522,5 +546,22 @@ http-response ^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$ scrip
 http-response ^https:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Keep.js, requires-body=true, tag=Keep
 http-response ^https:\/\/api\.gotokeep\.com\/config\/v\d\/basic script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Keep.js, requires-body=true, tag=Keep
 
+#>哔哩哔哩 //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_38, argument=%5B%5B%22json-del%22%2C%5B%22data.common_equip%22%5D%5D%5D
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=移除播放页面视频列表广告
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=移除搜索结果广告
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=移除评论区广告
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=移除动态页面广告
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=移除交互式弹幕
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=移除交互式弹幕
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=移除青少年弹窗
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=移除开屏广告
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index(\/story)?\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=移除首页推荐广告
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=精简首页顶部标签
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=移除热搜广告
+http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=移除观影页广告
+http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=移除直播间广告
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine\?|mine\/ipad\?) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=精简我的页面
+
 [MITM]
-hostname = cn-acs.m.cainiao.com, guide-acs.m.taobao.com, ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com, kad.gotokeep.com, 42.187.199.248, api.gotokeep.com
+hostname = cn-acs.m.cainiao.com, guide-acs.m.taobao.com, ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com, kad.gotokeep.com, 42.187.199.248, api.gotokeep.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com

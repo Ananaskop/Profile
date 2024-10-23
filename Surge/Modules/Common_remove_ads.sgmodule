@@ -136,8 +136,8 @@ DOMAIN-SUFFIX,ehaier.com,REJECT
 
 #>HttpDNS
 DOMAIN,hdns.ksyun.com,REJECT
-DOMAIN-KEYWORD,httpdns. ,extended-matching,REJECT
-DOMAIN-KEYWORD,httpdns- ,extended-matching,REJECT
+DOMAIN-KEYWORD,httpdns.,REJECT,extended-matching
+DOMAIN-KEYWORD,httpdns-,REJECT,extended-matching
 
 #>建设银行
 DOMAIN-KEYWORD,adv.ccb.com,REJECT

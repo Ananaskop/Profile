@@ -241,7 +241,7 @@ DOMAIN,titan.pinduoduo.com,REJECT
 URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT,extended-matching
 
 #>小红书
-AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,edith.xiaohongshu.com,extended-matching)),REJECT
+AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT
 
 #>高德地图
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch ,extended-matching), (USER-AGENT,AMapiPhone*)),REJECT

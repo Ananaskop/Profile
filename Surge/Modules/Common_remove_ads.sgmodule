@@ -40,7 +40,7 @@ DOMAIN,ossgw.alicdn.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,ut.taobao.com,REJECT,extended-matching,pre-matching
 
 #>阿里云盘
-IP-CIDR,203.107.1.1/24,REJECT,no-resolve
+IP-CIDR,203.107.1.1/24,REJECT,no-resolve,pre-matching
 
 #>爱奇艺
 DOMAIN,api.iqiyi.com,REJECT,extended-matching,pre-matching
@@ -69,8 +69,8 @@ DOMAIN-KEYWORD,safebrowsing.,REJECT,extended-matching,pre-matching
 #>百度
 DOMAIN,mobads.baidu.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,pos.baidu.com,REJECT,extended-matching,pre-matching
-IP-CIDR,180.76.76.112/32,REJECT,no-resolve
-IP-CIDR,180.76.76.200/32,REJECT,no-resolve
+IP-CIDR,180.76.76.112/32,REJECT,no-resolve,pre-matching
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve,pre-matching
 
 #>百度地图
 DOMAIN,afd.baidu.com,REJECT,extended-matching,pre-matching
@@ -98,7 +98,6 @@ DOMAIN,dsp-x.jd.com,REJECT,extended-matching,pre-matching
 DOMAIN,et.tanx.com,REJECT,extended-matching,pre-matching
 DOMAIN,gdfp.gifshow.com,REJECT,extended-matching,pre-matching
 DOMAIN,init.supersonicads.com,REJECT,extended-matching,pre-matching
-# DOMAIN,is.snssdk.com,REJECT,extended-matching,pre-matching
 DOMAIN,janapi.jd.com,REJECT,extended-matching,pre-matching
 DOMAIN,mercury-gateway.ixiaochuan.cn,REJECT,extended-matching,pre-matching
 DOMAIN,open.e.kuaishou.com,REJECT,extended-matching,pre-matching
@@ -144,8 +143,8 @@ DOMAIN-KEYWORD,adv.ccb.com,REJECT,extended-matching,pre-matching
 
 #>京东
 DOMAIN,dns.jd.com,REJECT,extended-matching,pre-matching
-IP-CIDR,101.124.19.122/32,REJECT,no-resolve
-IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
+IP-CIDR,101.124.19.122/32,REJECT,no-resolve,pre-matching
+IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve,pre-matching
 URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT,extended-matching,pre-matching
 
 #>芒果TV
@@ -166,7 +165,7 @@ DOMAIN-SUFFIX,da.mgtv.com,REJECT,extended-matching,pre-matching
 #>美团
 DOMAIN,maplocatesdksnapshot.d.meituan.net,REJECT,extended-matching,pre-matching
 DOMAIN,metrics-picture.d.meituan.net,REJECT,extended-matching,pre-matching
-IP-CIDR,103.37.155.60/32,REJECT,no-resolve
+IP-CIDR,103.37.155.60/32,REJECT,no-resolve,pre-matching
 
 #>美颜相机
 DOMAIN,aaid.uyunad.com,REJECT,extended-matching,pre-matching
@@ -209,7 +208,7 @@ DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,l.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-KEYWORD,trace.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-KEYWORD,trace.video.qq.com,REJECT,extended-matching,pre-matching
-IP-CIDR,47.110.187.87/32,REJECT,no-resolve
+IP-CIDR,47.110.187.87/32,REJECT,no-resolve,pre-matching
 
 #>微信
 DOMAIN,badjs.weixinbridge.com,REJECT,extended-matching,pre-matching
@@ -227,8 +226,8 @@ DOMAIN,switch.cup.com.cn,REJECT,extended-matching,pre-matching
 DOMAIN,yandexmetrica.com,REJECT,extended-matching,pre-matching
 
 #>拼多多
-AND,((URL-REGEX, ^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d,extended-matching,pre-matching), (USER-AGENT, *com.xunmeng.pinduoduo*)),REJECT
-AND,((URL-REGEX, ^http:\/\/\[s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*\]\/d,extended-matching,pre-matching), (USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
+AND,((URL-REGEX, ^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d,extended-matching), (USER-AGENT, *com.xunmeng.pinduoduo*)),REJECT,pre-matching
+AND,((URL-REGEX, ^http:\/\/\[s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*\]\/d,extended-matching), (USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT,pre-matching
 DOMAIN,ta-a.pinduoduo.com,REJECT,extended-matching,pre-matching
 DOMAIN,ta.pinduoduo.com,REJECT,extended-matching,pre-matching
 DOMAIN,th-a.pinduoduo.com,REJECT,extended-matching,pre-matching
@@ -240,30 +239,30 @@ DOMAIN,titan.pinduoduo.com,REJECT,extended-matching,pre-matching
 URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT,extended-matching,pre-matching
 
 #>小红书
-AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching,pre-matching)),REJECT
+AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT,pre-matching
 
 #>高德地图
-AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,extended-matching,pre-matching), (USER-AGENT,AMapiPhone*)),REJECT
+AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,extended-matching), (USER-AGENT,AMapiPhone*)),REJECT,pre-matching
 
 #>滴滴出行
 DOMAIN,hd.xiaojukeji.com,REJECT,extended-matching,pre-matching
 DOMAIN,gwp.xiaojukeji.com,REJECT,extended-matching,pre-matching
-AND,((IP-ASN,45090,no-resolve), (DEST-PORT,25641), (PROTOCOL,TCP)),REJECT
-AND,((IP-ASN,63646,no-resolve), (DEST-PORT,25641), (PROTOCOL,TCP)),REJECT
+AND,((IP-ASN,45090,no-resolve), (DEST-PORT,25641), (PROTOCOL,TCP)),REJECT,pre-matching
+AND,((IP-ASN,63646,no-resolve), (DEST-PORT,25641), (PROTOCOL,TCP)),REJECT,pre-matching
 
 #>彩云天气
 DOMAIN,abyss.cyapi.cn,REJECT,extended-matching,pre-matching
 DOMAIN,ad.cyapi.cn,REJECT,extended-matching,pre-matching
 
 #>闲鱼
-AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,extended-matching,pre-matching), (USER-AGENT,%E9%97%B2%E9%B1%BC*)),REJECT
+AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,extended-matching), (USER-AGENT,%E9%97%B2%E9%B1%BC*)),REJECT,pre-matching
 
 #>Keep
 DOMAIN,hc-ssp.sm.cn,REJECT,extended-matching,pre-matching
 
 #>哔哩哔哩
-URL-REGEX,^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH,REJECT-TINYGIF
-URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-TINYGIF
+URL-REGEX,^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH,REJECT-TINYGIF,extended-matching,pre-matching
+URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-TINYGIF,extended-matching,pre-matching
 
 [URL Rewrite]
 #>爱思助手 //list-app-m.i4.cn

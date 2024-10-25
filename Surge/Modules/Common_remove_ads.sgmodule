@@ -243,6 +243,9 @@ AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT,p
 
 #>高德地图
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,extended-matching), (USER-AGENT,AMapiPhone*)),REJECT,pre-matching
+DOMAIN,amap-aos-info-nogw.amap.com,REJECT,extended-matching,pre-matching
+DOMAIN,free-aos-cdn-image.amap.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,v.smtcdns.com,REJECT,extended-matching,pre-matching
 
 #>滴滴出行
 DOMAIN,hd.xiaojukeji.com,REJECT,extended-matching,pre-matching
